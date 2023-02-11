@@ -4,8 +4,8 @@ from functools import partial
 from pyrogram import filters, Client 
 from pyrogram.types import Message
 
-
 from tyger.modules.help import add_command_help
+from tyger import cmds
 
 mention = partial("<a href='tg://user?id={}'>{}</a>".format)
 
@@ -54,13 +54,9 @@ async def hidden_mention(bot: Client, message: Message):
 add_command_help(
     "mention",
     [
-        [
-            ".mention",
-            "Mention a user with a different name\nExample: `.mention @user CTO`",
-        ],
-        [
-            ".hmention",
-            "Mention a user with a hidden text\nExample: `.hmention @user`",
-        ],
+        [f"{cmds}mention",
+            "Mention a user with a different name\nExample: `mention @user CTO`".]
+        [f"{cmds}hmention",
+            "Mention a user with a hidden text\nExample: `hmention @user`".],
     ],
 )
