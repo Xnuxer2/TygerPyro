@@ -7,9 +7,10 @@ from pyrogram.types import *
 from tyger.helper.basic import edit_or_reply, get_text, get_user
 
 from tyger.modules.help import *
+from tyger import cmds
 
 OWNER = os.environ.get("OWNER", None)
-BIO = os.environ.get("BIO", "404 : Bio Lost")
+BIO = os.environ.get("BIO", "Tyger Pyro Userbot")
 
 
 @Client.on_message(filters.command("clone", ".") & filters.me)
@@ -33,7 +34,7 @@ async def clone(client: Client, message: Message):
         first_name=f_name,
         bio=c_bio,
     )
-    await message.edit(f"**From now I'm** __{f_name}__")
+    await message.edit(f"**Berhasil Clone** __{f_name}__")
 
 
 @Client.on_message(filters.command("revert", ".") & filters.me)
@@ -55,7 +56,7 @@ async def revert(client: Client, message: Message):
 add_command_help(
     "clone",
     [
-        ["clone", "Untuk mengkloning profil seseorang."],
-        ["revert", "Untuk Mendapatkan Akun Anda Kembali."],
+        [f"{cmds}clone", "Clone profile seseorang."],
+        [f"{cmds}revert", "Kembali ke profile (bio dan nama terkadang menggunakan default)."],
     ],
 )
