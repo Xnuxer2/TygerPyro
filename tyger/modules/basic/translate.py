@@ -4,7 +4,7 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 from py_trans import Async_PyTranslator
 from tyger.helper.utility import get_arg
-
+from tyger import cmds
 
 
 @Client.on_message(filters.command(["tr", "translate"], ["."]) & filters.me)
@@ -66,6 +66,6 @@ async def pytrans_tr(_, message: Message):
 add_command_help(
     "translate",
     [
-        [".tr", "Translate some text by give a text or reply that text/caption."],
+        [f"{cmds}tr", "Translate some text by give a text or reply that text/caption."],
     ],
 )
