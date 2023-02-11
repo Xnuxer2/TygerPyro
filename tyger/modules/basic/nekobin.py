@@ -11,7 +11,7 @@ import re
 from pyrogram.types import Message
 from httpx import AsyncClient
 from tyger.helper.utility import get_arg
-
+from tyger import cmds
 
 # Pastebins
 class PasteBins:
@@ -109,8 +109,7 @@ async def paste_dis_text(_, message: Message):
 add_command_help(
     "paste",
     [
-        [
-            ".paste `or` .nekobin `or` .hastebin `or` .spacebin",
+        [f"{cmds}paste `or` {cmds}nekobin `or` {cmds}hastebin `or` {cmds}spacebin",
             "To Paste Text to Hastebin / Nekobin or Spacebin \n\nCreate a Nekobin paste using replied to message.",
         ],
     ],
