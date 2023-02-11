@@ -1,15 +1,12 @@
 from asyncio import gather
 from os import remove
-
 from pyrogram import Client, filters
 from pyrogram.enums import ChatType
 from pyrogram.types import Message
-
 from tyger.helper.PyroHelpers import ReplyCheck
 from tyger.modules.basic.profile import extract_user
-
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 @Client.on_message(filters.command(["whois", "info"], ".") & filters.me)
 async def who_is(client: Client, message: Message):
@@ -137,12 +134,10 @@ async def chatinfo_handler(client: Client, message: Message):
 add_command_help(
     "info",
     [
-        [
-            "info <username/userid/reply>",
+        [f"{cmds}info <username/userid/reply>",
             "get telegram user info with full description.",
         ],
-        [
-            "chatinfo <username/chatid/reply>",
+        [f"{cmds}chatinfo <username/chatid/reply>",
             "get group info with full description.",
         ],
     ],
