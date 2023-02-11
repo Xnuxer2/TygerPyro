@@ -3,7 +3,7 @@ from datetime import datetime
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 from tyger.modules.help import *
-
+from tyger import cmds
 
 @Client.on_message(filters.command(["stats", "status"], ".") & filters.me)
 async def stats(client: Client, message: Message):
@@ -52,6 +52,6 @@ async def stats(client: Client, message: Message):
 add_command_help(
     "stats",
     [
-        ["stats", "Mengambil info akun anda."],
+        [f"{cmds}stats", "Mengambil info akun anda."],
     ],
 )
