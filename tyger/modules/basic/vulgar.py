@@ -1,11 +1,10 @@
 import asyncio
 import re
-
 from pyrogram import filters, Client
 from pyrogram.errors import MessageNotModified
 from pyrogram.types import Message
-
 from tyger.modules.help import add_command_help
+from tyger import cmds
 
 bad_words = ["nigga", "nigger", "coon", "retard", "fuck", "motherfucker"]
 
@@ -56,6 +55,6 @@ async def i_am_not_allowed_to_say_this(bot: Client, message: Message):
 add_command_help(
     "vulgar",
     [
-        [".vulgar", "Toggles bad word filtering on and off."],
+        [f"{cmds}vulgar", "Mengaktifkan dan menonaktifkan pemfilteran kata buruk."],
     ],
 )
