@@ -5,7 +5,7 @@ from pyrogram.types import Message
 
 from tyger.helper.aiohttp_helper import AioHttp
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 @Client.on_message(filters.command(["define", "dict"], ".") & filters.me)
 async def define(bot: Client, message: Message):
@@ -112,6 +112,6 @@ async def define(bot: Client, message: Message):
 add_command_help(
     "dictionary",
     [
-        [".define | .dict", "Tentukan kata yang Anda kirim atau balas."],
+        [f"{cmds}define | dict", "Tentukan kata yang Anda kirim atau balas."],
     ],
 )
