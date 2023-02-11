@@ -9,7 +9,7 @@ from tyger import aiosession
 from tyger.helper.PyroHelpers import ReplyCheck
 
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 async def make_carbon(code):
     url = "https://carbonara.vercel.app/api/cook"
