@@ -1,12 +1,11 @@
 import asyncio
 from html import escape
-
 import aiohttp
 from pyrogram import filters, Client 
 from pyrogram.types import Message
-
 from tyger.modules.help import add_command_help
 from pyrogram import enums
+from tyger import cmds
 
 @Client.on_message(filters.command(["weather", "w"], ".") & filters.me)
 async def get_weather(bot: Client, message: Message):
@@ -36,6 +35,6 @@ async def get_weather(bot: Client, message: Message):
 add_command_help(
     "weather",
     [
-        [".weather", "Gets weather information for provided location."],
+        [f"{cmds}weather", "Mendapatkan informasi cuaca untuk lokasi yang disediakan."],
     ],
 )
