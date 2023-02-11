@@ -1,12 +1,9 @@
 import asyncio
-
 from pyrogram import filters, Client
 from pyrogram.types import Message
-
-
 from tyger.helper.aiohttp_helper import AioHttp
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 @Client.on_message(filters.command(["unsplash", "pic"], ".") & filters.me)
 async def unsplash_pictures(bot: Client, message: Message):
@@ -46,6 +43,6 @@ async def unsplash_pictures(bot: Client, message: Message):
 add_command_help(
     "unsplash",
     [
-        [".unsplash __or__ .pic", "Send random pic of keyword first argument."],
+        [f"{cmds}unsplash __or__ {cmds}pic", "Send random pic of keyword first argument."],
     ],
 )
