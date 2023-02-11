@@ -14,7 +14,7 @@ from svglib.svglib import svg2rlg
 from tyger.helper.PyroHelpers import ReplyCheck
 from tyger.helper.aiohttp_helper import AioHttp
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 @Client.on_message(filters.command(["ggraph", "commitgraph"], ".") & filters.me)
 async def commit_graph(bot: Client, message: Message):
@@ -62,6 +62,6 @@ async def commit_graph(bot: Client, message: Message):
 add_command_help(
     "git",
     [
-        [".ggraph | .commitgraph", "Gets the commit graph for a Github user."],
+        [f"{cmds}ggraph | {cmds}commitgraph", "Gets the commit graph for a Github user."],
     ],
 )
