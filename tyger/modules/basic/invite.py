@@ -6,7 +6,7 @@ from tyger import SUDO_USER
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 @Client.on_message(
     filters.command(["invite"], ".") & (filters.me | filters.user(SUDO_USER))
@@ -66,11 +66,8 @@ async def invite_link(client: Client, message: Message):
 add_command_help(
     "invite",
     [
-        [
-            "invitelink",
-            "Dapatkan tautan undangan pribadi Anda. [Need Admin]",
-        ],
-        ["invite @username", "untuk mengundang seseorang."],
-        ["inviteall @username", "Mass adding (dapat memengaruhi akun Anda)."],
+        [f"{cmds}invitelink","mengambil link group private. [Memerlukan wewenang Admin]",],
+        [f"{cmds}invite @username", "invite pengguna ke group."],
+        [f"{cmds}inviteall @username", "menambah member group secara masal (akun anda mungkin akan terbatasi/limit)."],
     ],
 )
