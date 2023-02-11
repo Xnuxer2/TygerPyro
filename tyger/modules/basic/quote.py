@@ -6,7 +6,7 @@ from pyrogram.types import Message
 from tyger.helper.utility import get_arg
 
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 @Client.on_message(filters.me & filters.command(["q", "quotly"], "."))
 async def quotly(client: Client, message: Message):
@@ -40,13 +40,9 @@ async def quotly(client: Client, message: Message):
 add_command_help(
     "quotly",
     [
-        [
-            f"q or .quotly",
-            "To make an quote.",
-        ],
-        [
-            f"q <color> or .quotly <color>",
-            "Buat pesan menjadi stiker dengan warna latar belakang khusus yang diberikan.",
-        ],
+        [f"{cmds}q or {cmds}quotly",
+            "membuat gambar quote."],
+        [f"{cmds}q <warna> or {cmds}quotly <warna>",
+            "Membuat gambar quote dengan warna background." ],
     ],
 )
