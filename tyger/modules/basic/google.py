@@ -7,7 +7,7 @@ from pyrogram.types import Message
 from tyger.helper.basic import edit_or_reply
 
 from tyger.modules.help import *
-
+from tyger import cmds
 
 def googlesearch(query):
     co = 1
@@ -65,9 +65,6 @@ async def gs(client: Client, message: Message):
 add_command_help(
     "google",
     [
-        [
-            "google",
-            "Featch Details on Google.",
-        ],
+        [f"{cmds}google","Mencari melalui google."],
     ],
 )
