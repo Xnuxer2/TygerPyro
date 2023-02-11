@@ -6,7 +6,7 @@ from pyrogram.types import Message
 from tyger import SUDO_USER
 from tyger.helper.PyroHelpers import ReplyCheck
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 @Client.on_message(
     filters.command(["m", "music"], ".") & (filters.me | filters.user(SUDO_USER))
@@ -64,4 +64,4 @@ async def send_music(bot: Client, message: Message):
         await message.delete()
 
 
-add_command_help("music", [[".m `or` .music", "Search songs and send."]])
+add_command_help("music", [[f"{cmds}music", "Search songs and send."]])
