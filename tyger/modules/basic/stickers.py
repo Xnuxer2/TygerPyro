@@ -30,7 +30,7 @@ from pyrogram.types import Message
 from tyger.helper.PyroHelpers import ReplyCheck
 
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 async def add_text_img(image_path, text):
     font_size = 12
@@ -581,23 +581,15 @@ async def stick2png(client: Client, message: Message):
 add_command_help(
     "sticker",
     [
-        [
-            f"kang `reply` image",
-            f"Balas .kang ke stiker atau gambar untuk ditambahkan ke paket stiker.",
-        ],
-        [
-            f"kang [emoji] `or` .double [emoji]",
-            f"Untuk menambahkan dan menyesuaikan stiker emoji ke paket stiker Anda.\n\n`",
-        ],
-        [
-            f"packinfo `or` .stickerinfo",
-            "Untuk Mendapatkan Informasi Paket Stiker.",
-        ],
-        [
-            f"mtoi [reply ke sticker] or .getsticker [reply ke sticker]",
-            "Membalas stiker untuk mendapatkan foto stiker.",
-        ],
-        ["stickers [nama sticker]", "Untuk menemukan paket stiker."],
+        [f"{cmds}kang `Balas` Gambar",
+            f"Balas {cmds}kang menambahkan gambar/stiker ke pack stiker anda."],
+        [f"{cmds}kang [emoji] `atau` double [emoji]",
+            "menambahkan stiker dengan spesifik emoji.`"],
+        [f"{cmds}packinfo `or` {cmds}stickerinfo",
+            "mengambil info stiker atau pack striker."],
+        [ f"{cmds}mtoi atau {cmds}getsticker balas ke sticker",
+            "balas ke stiker untuk mengubahnya jadi image/gambar." ],
+        [f"{cmds}stickers <nama sticker>", "untuk mencari pack stikernya."],
     ],
 )
 
@@ -605,10 +597,8 @@ add_command_help(
 add_command_help(
     "memify",
     [
-        [
-            "mmf Top Text ; Bottom Text",
-            "Stiker Balas Pesan atau Foto akan diubah menjadi stiker teks meme yang ditentukan.",
-        ],
+        [f"{cmds}mmf Top Text ; Bottom Text",
+            "balas ke stiker untuk membuat memify text stiker."],
     ],
 )
 
@@ -616,9 +606,7 @@ add_command_help(
 add_command_help(
     "tiny",
     [
-        [
-            "tiny [reply ke photo/sticker]",
-            "Untuk Mengubah Stiker Menjadi Kecil.",
-        ],
+        [f"{cmds}tiny [reply ke photo/sticker]",
+            "Untuk Mengubah Stiker Menjadi Kecil."],
     ],
 )
