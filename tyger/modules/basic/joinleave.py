@@ -3,6 +3,7 @@ from pyrogram.types import Message
 
 from tyger import SUDO_USER
 from tyger.modules.help import add_command_help
+from tyger import cmds
 
 @Client.on_message(
     filters.command(["join"], ".") & (filters.me | filters.user(SUDO_USER))
@@ -71,13 +72,10 @@ async def kickmeallch(client: Client, message: Message):
 add_command_help(
     "joinleave",
     [
-        [
-            "kickme",
-            "Untuk meninggalkan!!.",
-        ],
-        ["leaveallgc", "keluar dari semua grup tempat Anda bergabung."],
-        ["leaveallch", "untuk meninggalkan semua saluran tempat Anda bergabung."],
-        ["join [Username]", "memberikan nama pengguna khusus untuk bergabung."],
-        ["leave [Username]", "memberikan nama pengguna khusus untuk keluar."],
+        [f"{cmds}kickme","Leave group!!."],
+        [f"{cmds}leaveallgc", "leave semua group."],
+        [f"{cmds}leaveallch", "leave semua channel."],
+        [f"{cmds}join [Username]", "mengundang seseorang untuk join."],
+        [f"{cmds}leave [Username]", "mengeluarkan seseorang dari group."],
     ],
 )
