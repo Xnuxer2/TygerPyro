@@ -6,6 +6,7 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 from pyrogram.types import ChatPermissions, Message
 
 from tyger.modules.help import add_command_help
+from tyger import cmds
 
 incorrect_parameters = f"Parameter Wrong, Type `.help locks`"
 data = {
@@ -151,10 +152,9 @@ async def locktypes(client: Client, message: Message):
 add_command_help(
     "locks",
     [
-        ["lock [all or specific]", "membatasi pengguna untuk mengirim."],
-        [
-            "unlock [all or specific]",
-            "Unrestrict\n\nSupported Locks / Unlocks:` `msg` | `media` | `stickers` | `polls` | `info`  | `invite` | `webprev` |`pin` | `all`.",
+        [f"{cmds}lock [all atau spesific content]", "membatasi kiriman group."],
+        [f"{cmds}unlock [all atau spesific content]",
+            "membuka lock\n\nspesific content : Locks / Unlocks:` `msg` | `media` | `stickers` | `polls` | `info`  | `invite` | `webprev` |`pin` | `all`.",
         ],
     ],
 )
