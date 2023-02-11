@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message 
 
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 @Client.on_message(filters.command("del", ".") & filters.me)
 async def del_msg(client: Client, message: Message):
@@ -86,8 +86,8 @@ async def purgeme(client: Client, message: Message):
 add_command_help(
     "purge",
     [
-        ["del", "untuk menghapus pesan seseorang."],
-        ["purge", "membalas semua pesan dari balasan Anda."],
-        ["purgeme [count]", "untuk menghapus pesan Anda saja."],
+        [f"{cmds}del", "menghapus pesan seseorang."],
+        [f"{cmds}purge", "menghapus pesan dari balasan anda."],
+        [f"{cmds}purgeme [count]", "menghapus pesan anda saja."],
     ],
 )
