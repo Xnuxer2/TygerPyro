@@ -1,11 +1,8 @@
 from asyncio import sleep
-
 from pyrogram import filters, Client 
-
-
 from tyger.helper.aiohttp_helper import AioHttp
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 def replace_text(text):
     return text.replace('"', "").replace("\\r", "").replace("\\n", "").replace("\\", "")
@@ -42,6 +39,6 @@ async def urban_dictionary(bot, message):
 add_command_help(
     "dictionary",
     [
-        [".ubran | .ud", "Define the word you send or reply to."],
+        [f"{cmds}ubran | {cmds}ud", "Define the word you send or reply to."],
     ],
 )
