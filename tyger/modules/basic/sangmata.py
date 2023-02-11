@@ -1,13 +1,11 @@
 import asyncio
-
 from pyrogram import *
 from pyrogram import filters
 from pyrogram.errors import YouBlockedUser
 from pyrogram.types import *
-
-
 from tyger.modules.help import add_command_help
 from tyger.modules.basic.profile import extract_user
+from tyger import cmds
 
 @Client.on_message(filters.command(["sg", "sa", "sangmata"], ".") & filters.me)
 async def sg(client: Client, message: Message):
@@ -45,9 +43,8 @@ async def sg(client: Client, message: Message):
 add_command_help(
     "sangmata",
     [
-        [
-            "sg [reply/userid/username]",
-            "Bantuannya untuk menemukan riwayat nama seseorang.",
+        [f"{cmds}sg [reply/userid/username]",
+            "mengambil info history pengguna.",
         ],
     ],
 )
