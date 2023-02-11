@@ -5,7 +5,7 @@ from pyrogram.types import Message
 
 from tyger import SUDO_USER
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 @Client.on_message(
     filters.command(["l", "lyrics"], ".") & (filters.me | filters.user(SUDO_USER))
@@ -23,7 +23,7 @@ async def send_lyrics(bot: Client, message: Message):
             elif len(cmd) == 1:
                 song_name = message.reply_to_message.text
         elif not message.reply_to_message and len(cmd) == 1:
-            await message.edit("Give a song name")
+            await message.edit("Berikan judul lagu")
             await asyncio.sleep(2)
             await message.delete()
             return
@@ -50,13 +50,13 @@ async def send_lyrics(bot: Client, message: Message):
             # delete the message from Saved Messages
             await bot.delete_messages("me", saved.updates[1].message.id)
         except TimeoutError:
-            await message.edit("That didn't work out")
+            await message.edit("batas waktu habis")
             await asyncio.sleep(2)
         await message.delete()
     except Exception as e:
-        await message.edit("`Failed to find lyrics`")
+        await message.edit("`gagal mencari lirik`")
         await asyncio.sleep(2)
         await message.delete()
 
 
-add_command_help("lyrics", [[".l `or` .lyrics", "Cari lirik dan kirim."]])
+add_command_help("lyrics", [[f"{cmds}lyrics", "Search lyrics and send."]])
