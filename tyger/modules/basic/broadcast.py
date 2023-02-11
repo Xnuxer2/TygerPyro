@@ -27,7 +27,7 @@ def get_arg(message: Message):
 )
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        tex = await message.reply_text("`Started global broadcast...`")
+        tex = await message.reply_text("`Memulai Gcast...`")
     else:
         return await message.edit_text("**Give A Message or Reply**")
     done = 0
@@ -39,7 +39,7 @@ async def gcast_cmd(client: Client, message: Message):
             elif get_arg:
                 msg = get_arg(message)
             chat = dialog.chat.id
-            if chat not in NB:
+            if chat not in BL_GCAST and chat not in BL_GCAST:
                 try:
                     if message.reply_to_message:
                         await msg.copy(chat)
@@ -51,7 +51,7 @@ async def gcast_cmd(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await tex.edit_text(
-        f"**Successfully Sent Message To** `{done}` **Groups, chat, Failed to Send Message To** `{error}` **Groups**"
+        f"**Berhasil mengirim ke** `{done}` **Groups chat, Gagal mengirim ke** `{error}` **Groups**"
     )
 
 
@@ -91,13 +91,9 @@ async def gucast(client: Client, message: Message):
 add_command_help(
     "broadcast",
     [
-        [
-            "gcast [text/reply]",
-            "Mengirim pesan Siaran Global ke semua grup yang Anda masuki. (Dapat Mengirim Media/Stiker)",
-        ],
-        [
-            "gucast [text/reply]",
-            "Mengirim pesan Siaran Global ke semua Pesan Pribadi / PC yang masuk. (Dapat Mengirim Media/Stiker)",
-        ],
-    ],
+        [f"{cmds}gcast [text/reply]",
+            "Broadcast pesan ke Group. (bisa menggunakan Media/Sticker)"],
+        [f"{cmds}gucast [text/reply]",
+            "Broadcast pesan ke semua chat. (bisa menggunakan Media/Sticker)"],
+   ],
 )
