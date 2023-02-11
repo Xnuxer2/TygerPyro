@@ -1,0 +1,50 @@
+{
+    "name": "Tyger Userbot",
+    "description": "An first Telegram Userbot with multi Clients for Spamming or Mass.",
+    "keywords": ["pyrogram", "userbot"],
+    "repository": "https://github.com/Xnuxer2/TygerPyro",
+  "stack": "container",
+    "env": {
+        "STRING_SESSION1": {
+            "description": "fill with the telethon session string from https://replit.com/@Itz-zaid/Generator",
+            "required": true
+        },
+        "MONGO_URL": {
+            "description": "Fill there an mongo database from mongodb.com",
+            "required": true,
+            "value": ""
+        },
+        "SUDO_USERS": {
+            "description": "Fill there your I'd go to @Zaid2_Robot pm and type /id",
+            "required": true,
+            "value": "1234567890 1234567890"
+        },
+        "OWNER_ID": {
+            "description": "Fill there your I'd go to @Zaid2_Robot pm and type /id",
+            "required": true,
+            "value": "1234567890"
+        },
+        "BOT_TOKEN": {
+            "description": "fill with your bot token get from @BotFather on telegram",
+            "required": true,
+            "value": ""
+        },
+        "OPENAI_API": {
+            "description": "Jika ingin menggunakan openai, isi openai-api-key",
+            "required": false,
+            "value": ""
+        },
+        "BOTLOG_CHATID": {
+            "description": "fill with your Publik LOG Group",
+            "required": false,
+            "value": ""
+        },
+        "CMD_HNDLR": {
+            "description": "Command Handlernya",
+            "required": true,
+            "value": "."
+        }
+
+
+    }
+  }
