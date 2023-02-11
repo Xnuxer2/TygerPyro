@@ -180,14 +180,14 @@ async def get_list_bots(client: Client, message: Message):
 add_command_help(
     "tag",
     [
-        [f".admins", "Dapatkan daftar admin obrolan."],
-        [f".kickdel or .zombies", "Untuk Menendang Akun yang dihapus."],
+        [f"{cmds}admins","Dapatkan daftar admin obrolan."],
+        [f"{cmds}kickdel or .zombies", "Untuk Menendang Akun yang dihapus."],
         [
-            f".everyone `or` .mentionall",
+            f"{cmds}everyone `or` .mentionall",
             "untuk menyebutkan Semua orang ",
         ],
         [
-            f".botlist",
+            f"{cmds}botlist",
             "Untuk mendapatkan daftar Bot Obrolan",
         ],
     ],
