@@ -2,6 +2,7 @@ from pyrogram import Client, enums, filters
 from pyrogram.types import Message 
 from config import LOG_GROUP
 from tyger.modules.help import add_command_help
+from tyger import cmds
 log = []
 
 
@@ -37,9 +38,7 @@ if log:
 add_command_help(
     "tagalert",
     [
-        [
-            "tagalert on/off",
-            "Untuk mengaktifkan atau menonaktifkan tag grup, yang akan masuk ke grup log.",
-        ],
+        [f"{cmds}tagalert on/off",
+            "Untuk mengaktifkan atau menonaktifkan tag grup, yang akan masuk ke grup log."],
     ],
 )
