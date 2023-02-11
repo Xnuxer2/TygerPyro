@@ -2,9 +2,8 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from telegraph import Telegraph, exceptions, upload_file
 import os
-
-
 from tyger.modules.help import *
+from tyger import cmds
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name="telegram")
@@ -66,7 +65,7 @@ add_command_help(
     "telegraph",
     [
         [
-            f"telegraph `or` .tg",
+            f"{cmds}telegraph `or` {cmds}tg",
             "To upload on telegraph.",
         ],
     ],
