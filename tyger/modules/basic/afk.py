@@ -32,11 +32,9 @@ async def collect_afk_messages(bot: Client, message: Message):
 
         if GetChatID(message) not in CHAT_TYPE:
             text = (
-                f"`Beep boop. This is an automated message.\n"
-                f"I am not available right now.\n"
+                f"`Saya Sedang AFK.\n"
                 f"Last seen: {last_seen}\n"
                 f"Reason: ```{AFK_REASON.upper()}```\n"
-                f"See you after I'm done doing whatever I'm doing.`"
             )
             await bot.send_message(
                 chat_id=GetChatID(message),
@@ -48,11 +46,9 @@ async def collect_afk_messages(bot: Client, message: Message):
         elif GetChatID(message) in CHAT_TYPE:
             if CHAT_TYPE[GetChatID(message)] == 50:
                 text = (
-                    f"`This is an automated message\n"
+                    f"`Saya Sedang AFK.\n"
                     f"Last seen: {last_seen}\n"
-                    f"This is the 10th time I've told you I'm AFK right now..\n"
-                    f"I'll get to you when I get to you.\n"
-                    f"No more auto messages for you`"
+                    f"Reason: ```{AFK_REASON.upper()}```\n"
                 )
                 await bot.send_message(
                     chat_id=GetChatID(message),
@@ -63,10 +59,10 @@ async def collect_afk_messages(bot: Client, message: Message):
                 return
             elif CHAT_TYPE[GetChatID(message)] % 5 == 0:
                 text = (
-                    f"`Hey I'm still not back yet.\n"
+                    f"`Saya masih AFK.\n"
                     f"Last seen: {last_seen}\n"
                     f"Still busy: ```{AFK_REASON.upper()}```\n"
-                    f"Try pinging a bit later.`"
+                    f"ga usah bawel.`"
                 )
                 await bot.send_message(
                     chat_id=GetChatID(message),
@@ -103,8 +99,8 @@ async def afk_unset(bot: Client, message: Message):
     if AFK:
         last_seen = subtract_time(datetime.now(), AFK_TIME).replace("ago", "").strip()
         await message.edit(
-            f"`While you were away (for {last_seen}), you received {sum(USERS.values()) + sum(GROUPS.values())} "
-            f"messages from {len(USERS) + len(GROUPS)} chats`"
+            f"`selama afk (afk sejak : {last_seen}), kamu menerima {sum(USERS.values()) + sum(GROUPS.values())} "
+            f"pesan dari {len(USERS) + len(GROUPS)}`"
         )
         AFK = False
         AFK_TIME = ""
@@ -123,8 +119,8 @@ if AFK:
        if AFK:
            last_seen = subtract_time(datetime.now(), AFK_TIME).replace("ago", "").strip()
            reply = await message.reply(
-               f"`While you were away (for {last_seen}), you received {sum(USERS.values()) + sum(GROUPS.values())} "
-               f"messages from {len(USERS) + len(GROUPS)} chats`"
+               f"`selama afk (afk sejak : {last_seen}), kamu menerima {sum(USERS.values()) + sum(GROUPS.values())} "
+               f"pesan dari {len(USERS) + len(GROUPS)}`"
            )
            AFK = False
            AFK_TIME = ""
