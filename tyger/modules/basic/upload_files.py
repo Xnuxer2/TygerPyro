@@ -1,11 +1,9 @@
 import asyncio
-
 import humanize
 from pyrogram import filters, Client
 from pyrogram.types import Message
-
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 async def progress_callback(current, total, bot: Client, message: Message):
     if int((current / total) * 100) % 25 == 0:
@@ -26,6 +24,6 @@ async def upload_helper(bot: Client, message: Message):
 add_command_help(
     "upload",
     [
-        [".upload", "Upload the file to telegram from the given system file path."],
+        [f"{cmds}upload", "Unggah file ke telegram dari file sistem."],
     ],
 )
