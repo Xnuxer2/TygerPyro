@@ -24,11 +24,10 @@ else:
         f"├• **ᴘʏᴛʜᴏɴ**: `{python_version()}`\n"
         f"├• **ᴘʏʀᴏɢʀᴀᴍ**: `{__version__}`\n"
         f"├• **ꜱᴜᴘᴘᴏʀᴛ**: [Click](t.me/TygerSupport)\n"
-        f"├• **ᴄʜᴀɴɴᴇʟ**: [Click](t.me/thelordofsatan)\n"
-        f"└• **яєρσ**: [Click](https://GitHub.com/Xnxx.com)"        
+        f"└• **ᴄʜᴀɴɴᴇʟ**: [Click](t.me/thelordofsatan)\n"        
     )
 
-@Client.on_message(filters.command(["geez"], cmds) & filters.me)
+@Client.on_message(filters.command(["tyger"], cmds) & filters.me)
 async def module_help(client: Client, message: Message):
     await logging(client)
     cmd = message.command
@@ -76,7 +75,7 @@ async def alive(client: Client, message: Message):
 async def repo(bot: Client, message: Message):
     await message.edit("⚡")
     await asyncio.sleep(1)
-    await message.edit("Fetching Source Code.....")
+    await message.edit("Mengambil informasi repo.....")
     await asyncio.sleep(1)
     await message.edit("Here is repo: \n\n\nhttps://github.com/itz-zaid/Zaid-UserBot\nFork & Give an ⭐")
 
@@ -187,17 +186,17 @@ async def get_id(bot: Client, message: Message):
 add_command_help(
     "start",
     [
-        [".alive", "Periksa apakah bot masih hidup atau tidak."],
-        [".repo", "Menampilkan repo dari userbot ini."],
-        [".creator", "Tunjukkan kepada pembuat userbot ini."],
-        [".id", "Kirim id dari apa yang Anda balas."],
-        [".up `or` .uptime", "Periksa waktu aktif bot saat ini."],
+        [f"{cmds}alive", "Periksa apakah bot masih hidup atau tidak."],
+        [f"{cmds}repo", "Menampilkan repo dari userbot ini."],
+        [f"{cmds}creator", "Tunjukkan kepada pembuat userbot ini."],
+        [f"{cmds}id", "Kirim id dari apa yang Anda balas."],
+        [f"{cmds}up `or` .uptime", "Periksa waktu aktif bot saat ini."],
     ],
 )
 
 add_command_help(
     "restart",
     [
-        [".restart", "You are retarded if you do not know what this does."],
+        [f"{cmds}restart", "You are retarded if you do not know what this does."],
     ],
 )
