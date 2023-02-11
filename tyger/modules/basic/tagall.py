@@ -1,10 +1,8 @@
 from asyncio import sleep
-
 from pyrogram import Client, filters
 from pyrogram.types import Message
-
-
 from tyger.modules.help import add_command_help
+from tyger import cmds
 
 spam_chats = []
 
@@ -63,13 +61,11 @@ async def cancel_spam(client: Client, message: Message):
 add_command_help(
     "tagall",
     [
-        [
-            "tagall [text/reply ke chat]",
-            "Tag all the members one by one",
+        [f"{cmds}tagall [text/reply ke chat]",
+            f"{cmds}Tag all the members one by one",
         ],
-        [
-            "cancel",
-            f"to stop .tagall",
+        [f"{cmds}cancel",
+            f"to stop tagall",
         ],
     ],
 )
