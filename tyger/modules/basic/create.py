@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 @Client.on_message(filters.command("create", ".") & filters.me)
 async def create(client: Client, message: Message):
@@ -34,7 +34,7 @@ async def create(client: Client, message: Message):
 add_command_help(
     "create",
     [
-        ["create ch", "membuat saluran"],
-        ["create gc", "membuat grup"],
+        [f"{cmds}create ch", "membuat channel"],
+        [f"{cmds}create gc", "membuat group"],
     ],
 )
