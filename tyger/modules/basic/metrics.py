@@ -41,6 +41,6 @@ add_command_help(
     [
         [f"{cmds}wordcount",
             "Finds the 25 most used words in the last 1000 messages in a group or private chat. Use in "
-            "chat you want to find the metric in".],
+            "chat you want to find the metric in."],
     ],
 )
