@@ -4,7 +4,7 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 class Custom(dict):
     def __missing__(self, key):
@@ -39,10 +39,8 @@ async def word_count(bot: Client, message: Message):
 add_command_help(
     "metrics",
     [
-        [
-            ".wordcount",
+        [f"{cmds}wordcount",
             "Finds the 25 most used words in the last 1000 messages in a group or private chat. Use in "
-            "chat you want to find the metric in.",
-        ],
+            "chat you want to find the metric in".],
     ],
 )
