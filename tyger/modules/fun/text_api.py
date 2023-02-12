@@ -5,6 +5,7 @@ from pyrogram.types import Message
 from tyger import SUDO_USER
 from tyger.helper.aiohttp_helper import AioHttp
 from tyger.modules.help import add_command_help
+from tyger import cmds
 
 text_apis_data = {
     "compliment": {
@@ -84,6 +85,6 @@ for x in text_apis_data:
     add_command_help(
         "text",
         [
-            [f".{x}", text_apis_data[x]["help"]],
+            [f"{cmds}{x}", text_apis_data[x]["help"]],
         ],
     )
