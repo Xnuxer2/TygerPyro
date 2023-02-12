@@ -101,7 +101,7 @@ async def set_chat_photo(client: Client, message: Message):
 
 
 
-@Client.on_message(filters.group & filters.command("ban", ".") & filters.me)
+@Client.on_message(filters.group & filters.command("ban", cmds) & filters.me)
 async def member_ban(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
     rd = await message.edit_text("`Processing...`")
