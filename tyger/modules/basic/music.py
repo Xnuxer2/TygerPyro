@@ -9,7 +9,7 @@ from tyger.modules.help import add_command_help
 from tyger import cmds
 
 @Client.on_message(
-    filters.command(["m", "music"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["m", "music"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def send_music(bot: Client, message: Message):
     try:
