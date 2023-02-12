@@ -3,11 +3,10 @@ import asyncio
 from prettytable import PrettyTable
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message
-
 from tyger import app, CMD_HELP
 from tyger.helper.PyroHelpers import ReplyCheck
 from tyger.helper.utility import split_list
-
+from tyger import cmds
 
 async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
     xyz = (
@@ -48,7 +47,7 @@ async def module_help(client: Client, message: Message):
                 reply_to_message_id=ReplyCheck(message),
             )
             await xx.reply(
-                f"**Usage:** `.help broadcast` **To View Module Information**"
+                f"**Usage:** `{cmds}help broadcast` **To View Module Information**"
             )
             return
 
@@ -88,7 +87,7 @@ async def module_helper(client: Client, message: Message):
             message, f"```{str(ac)}```\n• @TygerSupport × @thelordofsatan •"
         )
         await message.reply(
-            f"**Usage**:`.help broadcast` **untuk melihat detail modul**"
+            f"**Usage**:`{cmds}help broadcast` **untuk melihat detail modul**"
         )
 
     if help_arg:
@@ -97,7 +96,7 @@ async def module_helper(client: Client, message: Message):
             this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
             for x in commands:
                 this_command += f"  •  **Command:** `.{str(x)}`\n  ∟  **Function:** `{str(commands[x])}`\n\n"
-            this_command += "© @TheUpdatesChannel"
+            this_command += "© @thelordofsatan"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
             )
