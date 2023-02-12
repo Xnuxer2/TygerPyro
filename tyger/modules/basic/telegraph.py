@@ -24,7 +24,7 @@ def get_text(message: Message) -> [None, str]:
     else:
         return None
 
-@Client.on_message(filters.command(["tg", "telegraph", "tm", "tgt"], ".") & filters.me)
+@Client.on_message(filters.command(["tg", "telegraph", "tm", "tgt"], cmds) & filters.me)
 async def uptotelegraph(client: Client, message: Message):
     tex = await message.edit_text("`Processing . . .`")
     if not message.reply_to_message:
