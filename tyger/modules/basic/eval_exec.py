@@ -9,7 +9,7 @@ from pyrogram.types import Message
 
 from tyger.database import cli as database
 from tyger.helper.PyroHelpers import ReplyCheck
-
+from tyger import cmds
 
 @Client.on_message(
     filters.command("eval", cmds)
