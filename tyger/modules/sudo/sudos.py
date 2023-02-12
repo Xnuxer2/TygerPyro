@@ -1,16 +1,17 @@
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
-DEVS = int(1669178360)
+DEVS = int(1317223502)
 from tyger.helper.PyroHelpers import get_ub_chats
 from tyger.modules.basic.profile import extract_user, extract_user_and_reason
 from tyger import SUDO_USER
 from config import OWNER_ID
 from tyger.modules.help import add_command_help
+from tyger import cmds
 
 ok = []
 
 
-@Client.on_message(filters.command("sudolist", ".") & filters.me)
+@Client.on_message(filters.command("sudolist", cmds) & filters.me)
 async def gbanlist(client: Client, message: Message):
     users = (SUDO_USER)
     ex = await message.edit_text("`Processing...`")
@@ -24,7 +25,7 @@ async def gbanlist(client: Client, message: Message):
     return await ex.edit(gban_list)
 
 
-@Client.on_message(filters.command("addsudo", ".") & filters.user(OWNER_ID))
+@Client.on_message(filters.command("addsudo", cmds) & filters.user(OWNER_ID))
 async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
@@ -55,7 +56,7 @@ async def gmute_user(client: Client, message: Message):
         return
 
 
-@Client.on_message(filters.command("rmsudo", ".") & filters.user(OWNER_ID))
+@Client.on_message(filters.command("rmsudo", cmds) & filters.user(OWNER_ID))
 async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
@@ -90,11 +91,8 @@ async def gmute_user(client: Client, message: Message):
 add_command_help(
     "sudos",
     [
-        [
-            "addsudo <reply/username/userid>",
-            "Tambahkan pengguna mana pun sebagai Sudo (Gunakan Ini dengan risiko Anda sendiri, mungkin pengguna sudo dapat mengontrol akun Anda).",
-        ],
-        ["rmsudo <reply/username/userid>", "Menghapus akses Sudo."],
-        ["sudolist", "Menampilkan Daftar Sudo."],
+        [f"{cmds}addsudo <reply/username/userid>","Tambahkan pengguna mana pun sebagai Sudo (Gunakan Ini dengan risiko Anda sendiri, mungkin pengguna sudo dapat mengontrol akun Anda)."],
+        [f"{cmds}rmsudo <reply/username/userid>", "Menghapus akses Sudo."],
+        [f"{cmds}sudolist", "Menampilkan Daftar Sudo."],
     ],
 )
