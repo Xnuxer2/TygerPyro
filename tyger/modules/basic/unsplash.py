@@ -5,7 +5,7 @@ from tyger.helper.aiohttp_helper import AioHttp
 from tyger.modules.help import add_command_help
 from tyger import cmds
 
-@Client.on_message(filters.command(["unsplash", "pic"], ".") & filters.me)
+@Client.on_message(filters.command(["unsplash", "pic"], cmds) & filters.me)
 async def unsplash_pictures(bot: Client, message: Message):
     cmd = message.command
 
