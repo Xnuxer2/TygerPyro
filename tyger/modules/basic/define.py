@@ -7,7 +7,7 @@ from tyger.helper.aiohttp_helper import AioHttp
 from tyger.modules.help import add_command_help
 from tyger import cmds
 
-@Client.on_message(filters.command(["define", "dict"], ".") & filters.me)
+@Client.on_message(filters.command(["define", "dict"], cmds) & filters.me)
 async def define(bot: Client, message: Message):
     cmd = message.command
 
