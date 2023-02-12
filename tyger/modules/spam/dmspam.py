@@ -5,17 +5,18 @@ import os
 import sys
 import asyncio
 from random import choice
-OWNER_ID = 1669178360
+OWNER_ID = 1317223502
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from cache.data import *
 from tyger import SUDO_USER
 SUDO_USERS = SUDO_USER
 Usage = f"**❌ Wrong Usage ❌** \n Type: `.help dmspam`"
+from tyger import cmds
 
 
 @Client.on_message(
-    filters.command(["dmraid"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["dmraid"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def dmraid(xspam: Client, e: Message):
       """ Module: Dm Raid """
@@ -57,7 +58,7 @@ async def dmraid(xspam: Client, e: Message):
                     await asyncio.sleep(0.10)
 
 @Client.on_message(
-    filters.command(["dmspam"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["dmspam"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def dmspam(spam: Client, e: Message):
       text = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
@@ -96,7 +97,7 @@ async def dmspam(spam: Client, e: Message):
                     await spam.send_message(id, msg)
                     await asyncio.sleep(0.10)
       else:
-          await e.reply_text("Usage: .dmspam username count message")
+          await e.reply_text("Usage: {cmds}dmspam username count message")
 
 
 
@@ -105,7 +106,7 @@ async def dmspam(spam: Client, e: Message):
 add_command_help(
     "dmspam",
     [
-        [".dmspam", "<username and count>`."],
-        [".dmraid", "<username and count>`."],
+        [f"{cmds}dmspam", "<username and count>`."],
+        [f"{cmds}dmraid", "<username and count>`."],
     ],
 )
