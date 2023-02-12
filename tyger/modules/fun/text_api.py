@@ -50,7 +50,7 @@ for x in text_apis_data:
 
 
 @Client.on_message(
-    filters.command(text_api_commands, ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(text_api_commands, cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def text_api(bot: Client, message: Message):
     cmd = message.command
