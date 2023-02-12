@@ -171,7 +171,7 @@ def get_arg(message: Message):
         return ""
     return " ".join(split[1:])
 
-@Client.on_message(filters.command(["tikel", "kang", "steal"], ".") & filters.me)
+@Client.on_message(filters.command(["tikel", "kang", "steal"], cmds) & filters.me)
 async def kang(client: Client, message: Message):
     user = client.me
     replied = message.reply_to_message
@@ -392,7 +392,7 @@ async def get_response(message, client):
     return [x async for x in client.get_chat_history("Stickers", limit=1)][0].text
 
 
-@Client.on_message(filters.command(["packinfo", "stickerinfo"], ".") & filters.me)
+@Client.on_message(filters.command(["packinfo", "stickerinfo"], cmds) & filters.me)
 async def packinfo(client: Client, message: Message):
     rep = await message.edit_text("`Processing...`")
     if not message.reply_to_message:
@@ -428,7 +428,7 @@ async def packinfo(client: Client, message: Message):
     await rep.edit(output)
 
 
-@Client.on_message(filters.command("stickers", ".") & filters.me)
+@Client.on_message(filters.command("stickers", cmds) & filters.me)
 async def cb_sticker(client: Client, message: Message):
     query = get_text(message)
     if not query:
@@ -448,7 +448,7 @@ async def cb_sticker(client: Client, message: Message):
     await xx.edit(reply)
 
 
-@Client.on_message(filters.command("tiny", ".") & filters.me)
+@Client.on_message(filters.command("tiny", cmds) & filters.me)
 async def tinying(client: Client, message: Message):
     reply = message.reply_to_message
     if not (reply and (reply.media)):
@@ -525,7 +525,7 @@ async def tinying(client: Client, message: Message):
     os.remove(ik)
 
 
-@Client.on_message(filters.command(["mmf", "memify"], ".") & filters.me)
+@Client.on_message(filters.command(["mmf", "memify"], cmds) & filters.me)
 async def memify(client: Client, message: Message):
     if not message.reply_to_message_id:
         await message.edit_text("**Plz reply to an sticker!**")
@@ -551,7 +551,7 @@ async def memify(client: Client, message: Message):
     os.remove(meme)
 
 
-@Client.on_message(filters.command(["getsticker", "mtoi"], ".") & filters.me)
+@Client.on_message(filters.command(["getsticker", "mtoi"], cmds) & filters.me)
 async def stick2png(client: Client, message: Message):
     try:
         await message.edit("`Downloading . . .`")
