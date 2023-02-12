@@ -17,7 +17,7 @@ def switch():
     return vulgar_filter
 
 
-@Client.on_message(filters.command("vulgar", ".") & filters.me)
+@Client.on_message(filters.command("vulgar", cmds) & filters.me)
 async def toggle(bot: Client, message: Message):
     c = switch()
     await message.edit("`Vulgar Enabled`" if c else "`Vulgar Disabled`")
