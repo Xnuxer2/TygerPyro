@@ -28,7 +28,7 @@ def get_arg(message):
     return " ".join(split[1:])
 
 
-@Client.on_message(filters.command("setlimit", ["."]) & filters.me)
+@Client.on_message(filters.command("setlimit", [cmds]) & filters.me)
 async def pmguard(client, message):
     arg = get_arg(message)
     if not arg:
@@ -39,7 +39,7 @@ async def pmguard(client, message):
 
 
 
-@Client.on_message(filters.command("setblockmsg", ["."]) & filters.me)
+@Client.on_message(filters.command("setblockmsg", [cmds]) & filters.me)
 async def setpmmsg(client, message):
     arg = get_arg(message)
     if not arg:
@@ -53,7 +53,7 @@ async def setpmmsg(client, message):
     await message.edit("**Custom block message set**")
 
 
-@Client.on_message(filters.command(["allow", "ap", "approve", "a"], ["."]) & filters.me & filters.private)
+@Client.on_message(filters.command(["allow", "ap", "approve", "a"], [cmds]) & filters.me & filters.private)
 async def allow(client, message):
     chat_id = message.chat.id
     pmpermit, pm_message, limit, block_message = await Zaid.get_pm_settings()
@@ -66,7 +66,7 @@ async def allow(client, message):
     USERS_AND_WARNS.update({chat_id: 0})
 
 
-@Client.on_message(filters.command(["deny", "dap", "disapprove", "dapp"], ["."]) & filters.me & filters.private)
+@Client.on_message(filters.command(["deny", "dap", "disapprove", "dapp"], [cmds]) & filters.me & filters.private)
 async def deny(client, message):
     chat_id = message.chat.id
     await Zectdb.deny_user(chat_id)
