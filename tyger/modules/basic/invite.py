@@ -9,7 +9,7 @@ from tyger.modules.help import add_command_help
 from tyger import cmds
 
 @Client.on_message(
-    filters.command(["invite"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["invite"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def inviteee(client: Client, message: Message):
     mg = await message.reply_text("`Adding Users!`")
@@ -26,7 +26,7 @@ async def inviteee(client: Client, message: Message):
     await mg.edit(f"`Sucessfully Added {len(user_list)} To This Group / Channel!`")
 
 @Client.on_message(
-    filters.command(["inviteall"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["inviteall"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def inv(client: Client, message: Message):
     ex = await message.reply_text("`Processing . . .`")
@@ -51,7 +51,7 @@ async def inv(client: Client, message: Message):
             except Exception as e:
                 pass
 
-@Client.on_message(filters.command("invitelink", ".") & filters.me)
+@Client.on_message(filters.command("invitelink", cmds) & filters.me)
 async def invite_link(client: Client, message: Message):
     um = await message.edit_text("`Processing...`")
     if message.chat.type in [ChatType.GROUP, ChatType.SUPERGROUP]:
