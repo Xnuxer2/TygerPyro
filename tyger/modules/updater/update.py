@@ -150,7 +150,7 @@ async def matilo(client, message):
     sys.exit()
 
 
-@Client.on_message(filters.command("gupdate", "*") & filters.user(DEVS))
+@Client.on_message(filters.command("gupdate", cmds) & filters.user(DEVS))
 @Client.on_message(filters.command("update", cmds) & filters.me)
 async def upstream(client: Client, message: Message):
     status = await message.edit_text("`Checking for Updates, Wait a Moment...`")
