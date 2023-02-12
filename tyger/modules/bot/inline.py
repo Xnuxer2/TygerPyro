@@ -17,6 +17,7 @@ from pyrogram.types import (
 from tyger import CMD_HELP, StartTime, app
 from tyger.helper.data import Data
 from tyger.helper.inline import inline_wrapper, paginate_help
+from config import OWNER_ID, BRANCH as branch
 
 async def get_readable_time(seconds: int) -> str:
     count = 0
@@ -65,7 +66,7 @@ async def alive_function(message: Message, answers):
                 msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
             ),
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("──「 ʜᴇʟᴘ 」──", callback_data="helper")]]
+                [[InlineKeyboardButton("🥀 𝗠𝗮𝘀𝘁𝗲𝗿 ", url=f"tg://openmessage?user_id={message.from_user.id}")]]
             ),
         )
     )
