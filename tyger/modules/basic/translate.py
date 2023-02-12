@@ -7,7 +7,7 @@ from tyger.helper.utility import get_arg
 from tyger import cmds
 
 
-@Client.on_message(filters.command(["tr", "translate"], ["."]) & filters.me)
+@Client.on_message(filters.command(["tr", "translate"], [cmds]) & filters.me)
 async def pytrans_tr(_, message: Message):
   tr_msg = await message.edit("`Processing...`")
   r_msg = message.reply_to_message
