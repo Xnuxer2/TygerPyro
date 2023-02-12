@@ -4,9 +4,8 @@ from random import randint
 
 from pyrogram import filters, Client
 from pyrogram.types import Message
-
-
 from tyger.modules.help import add_command_help
+from tyger import cmds
 
 emojis = {
     "moon": list("🌗🌘🌑🌒🌓🌔🌕🌖"),
@@ -48,11 +47,11 @@ async def special_emojis(bot: Client, message: Message):
 
 # Command help section
 special_emoji_help = [
-    [".moon", "Cycles all the phases of the moon emojis."],
-    [".clock", "Cycles all the phases of the clock emojis."],
-    [".thunder", "Cycles thunder."],
-    [".heart", "Cycles heart emojis."],
-    [".earth `or` .globe", "Make the world go round."],
+    [f"{cmds}moon", "Cycles all the phases of the moon emojis."],
+    [f"{cmds}clock", "Cycles all the phases of the clock emojis."],
+    [f"{cmds}thunder", "Cycles thunder."],
+    [f"{cmds}heart", "Cycles heart emojis."],
+    [f"{cmds}earth `or` {cmds}globe", "Make the world go round."],
 ]
 
 for x in special_emojis_dict:
