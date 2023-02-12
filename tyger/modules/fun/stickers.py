@@ -40,7 +40,7 @@ for x in sticker_data:
             sticker_commands.append(y)
 
 
-@Client.on_message(filters.command(sticker_commands, ".") & filters.me)
+@Client.on_message(filters.command(sticker_commands, cmds) & filters.me)
 async def sticker_super_func(bot: Client, message: Message):
     try:
         sticker = {}
