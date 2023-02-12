@@ -6,7 +6,7 @@ from tyger.modules.help import add_command_help
 from tyger import cmds
 
 @Client.on_message(
-    filters.command(["join"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["join"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def join(client: Client, message: Message):
     tex = message.command[1] if len(message.command) > 1 else message.chat.id
@@ -19,7 +19,7 @@ async def join(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["leave"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["leave"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def leave(client: Client, message: Message):
     xd = message.command[1] if len(message.command) > 1 else message.chat.id
@@ -32,7 +32,7 @@ async def leave(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["leaveallgc"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["leaveallgc"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def kickmeall(client: Client, message: Message):
     tex = await message.reply_text("`Global Leave from group chats...`")
@@ -51,7 +51,7 @@ async def kickmeall(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command(["leaveallch"], ".") & filters.me)
+@Client.on_message(filters.command(["leaveallch"], cmds) & filters.me)
 async def kickmeallch(client: Client, message: Message):
     ok = await message.reply_text("`Global Leave from group chats...`")
     er = 0
