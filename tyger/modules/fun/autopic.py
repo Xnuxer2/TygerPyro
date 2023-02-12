@@ -10,7 +10,7 @@ from pyrogram import filters, Client
 from tyger import SUDO_USER
 from tyger.helper.basic import eor
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 __XOR = []
 FIRST_TIME = True
@@ -66,5 +66,5 @@ async def autopic_zaid(_, m):
 
 add_command_help(
     "Autopic",
-    [[".autopic", "Ubah DP Anda setiap 5 menit. \nJalankan .autopic lagi untuk menghentikannya."]],
+    [[f"{cmds}autopic", "Ubah DP Anda setiap 5 menit. \nJalankan .autopic lagi untuk menghentikannya."]],
 )
