@@ -1,17 +1,15 @@
 import asyncio
 import re
 from random import choice, randint
-
 import uwuify
 from pyrogram import filters, Client
 from pyrogram.types import Message
-
 from tyger.helper.PyroHelpers import GetUserMentionable
 from tyger.helper.aiohttp_helper import AioHttp
 from tyger.helper.constants import Fs, MEMES, Weebify
 from tyger.helper.utility import get_mock_text
 from tyger.modules.help import add_command_help
-
+from tyger import cmds
 
 @Client.on_message(filters.command("lorem", ".") & filters.me)
 async def lorem(bot: Client, message: Message):
@@ -337,28 +335,28 @@ async def silence_wench(bot: Client, message):
 add_command_help(
     "text",
     [
-        [".nice", "Replaces command with NICENICENICENICE."],
-        [".compliment", "Replaces command with a nice compliment."],
-        [".devexcuse", "Replaces command with an excuse that a developer would give."],
-        [".reverse", "Sends ASCII version of the Uno reverse card."],
-        [".slap", "Sends a randomly generated slap text. Can become very random at some times."],
-        [".insult", "Sends a randomly generated insult. Can become very random at some times."],
-        [".vapor", "Vaporizes the text."],
-        [".weeb `or` .weebify", "Weebifies the text."],
-        [".ok", "Sends -_____- with a fast animation."],
-        ["-_-", "Extends to -________-"],
-        [".f", "Pay respects"],
-        [".F", "Pay respects but filled"],
-        ["#f", "Pay respects but calligraphy."],
-        [".mockt", "Mock (text only version)"],
-        [".dice", "Send dice animation"],
-        [".target", "Send target animation"],
-        ["oof", "Oof"],
-        [";_; `or` .sad `or` cri", ";_;"],
-        [".ht", "Heads or Tails"],
+        [f"{cmds}nice", "Replaces command with NICENICENICENICE."],
+        [f"{cmds}compliment", "Replaces command with a nice compliment."],
+        [f"{cmds}devexcuse", "Replaces command with an excuse that a developer would give."],
+        [f"{cmds}reverse", "Sends ASCII version of the Uno reverse card."],
+        [f"{cmds}slap", "Sends a randomly generated slap text. Can become very random at some times."],
+        [f"{cmds}insult", "Sends a randomly generated insult. Can become very random at some times."],
+        [f"{cmds}vapor", "Vaporizes the text."],
+        [f"{cmds}weeb `or` {cmds}weebify", "Weebifies the text."],
+        [f"{cmds}ok", "Sends -_____- with a fast animation."],
+        [f"{cmds}-_-", "Extends to -________-"],
+        [f"{cmds}f", "Pay respects"],
+        [f"{cmds}F", "Pay respects but filled"],
+        [f"{cmds}f", "Pay respects but calligraphy."],
+        [f"{cmds}mockt", "Mock (text only version)"],
+        [f"{cmds}dice", "Send dice animation"],
+        [f"{cmds}target", "Send target animation"],
+        [f"{cmds}oof", "Oof"],
+        [f"{cmds};_; `or` {cmds}sad `or` cri", ";_;"],
+        [f"{cmds}ht", "Heads or Tails"],
         [".reverset", "Reverses the text"],
-        [".shrug", "Random shrug"],
-        [".tableflip", "Flip the table"],
-        [".silence", "Silence wench"],
+        [f"{cmds}shrug", "Random shrug"],
+        [f"{cmds}tableflip", "Flip the table"],
+        [f"{cmds}silence", "Silence wench"],
     ],
 )
