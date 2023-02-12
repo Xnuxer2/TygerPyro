@@ -11,32 +11,32 @@ from tyger.helper.utility import get_mock_text
 from tyger.modules.help import add_command_help
 from tyger import cmds
 
-@Client.on_message(filters.command("lorem", ".") & filters.me)
+@Client.on_message(filters.command("lorem", cmds) & filters.me)
 async def lorem(bot: Client, message: Message):
     response = await AioHttp().get_text('https://loripsum.net/api/plaintext')
     await message.edit(response)
 
 
-@Client.on_message(filters.command("nice", ".") & filters.me)
+@Client.on_message(filters.command("nice", cmds) & filters.me)
 async def nice(bot: Client, message: Message):
     await message.edit("NICENICENICENICE")
 
 
-@Client.on_message(filters.command("reverse", ".") & filters.me)
+@Client.on_message(filters.command("reverse", cmds) & filters.me)
 async def reverse(bot: Client, message: Message):
     await message.edit(
         text=MEMES.REVERSE,
     )
 
 
-@Client.on_message(filters.command("cock", ".") & filters.me)
+@Client.on_message(filters.command("cock", cmds) & filters.me)
 async def cock(bot: Client, message: Message):
     await message.edit(
         text=MEMES.COCK,
     )
 
 
-@Client.on_message(filters.command("slap", ".") & filters.me)
+@Client.on_message(filters.command("slap", cmds) & filters.me)
 async def slap(bot: Client, message: Message):
     if message.reply_to_message is None:
         await message.edit(
@@ -72,7 +72,7 @@ async def slap(bot: Client, message: Message):
 
 
 @Client.on_message(
-    (filters.command("-_-", "") | filters.command("ok", ".")) & filters.me
+    (filters.command("-_-", "") | filters.command("ok", cmds)) & filters.me
 )
 async def ok(bot: Client, message: Message):
     okay = "-_-"
@@ -82,7 +82,7 @@ async def ok(bot: Client, message: Message):
 
 
 @Client.on_message(
-    (filters.command(";_;", "") | filters.command(["sad", "cri"], ".")) & filters.me
+    (filters.command(";_;", "") | filters.command(["sad", "cri"], cmds)) & filters.me
 )
 async def sad_cri(bot: Client, message: Message):
     cri = ";_;"
@@ -99,7 +99,7 @@ async def send_oof(bot: Client, message: Message):
         await message.edit(oof, parse_mode=None)
 
 
-@Client.on_message(filters.command("mockt", ".") & filters.me)
+@Client.on_message(filters.command("mockt", cmds) & filters.me)
 async def mock_text(bot: Client, message: Message):
     cmd = message.command
 
@@ -124,24 +124,24 @@ async def mock_text(bot: Client, message: Message):
     await message.edit(reply_text)
 
 
-@Client.on_message(filters.command("brain", ".") & filters.me)
+@Client.on_message(filters.command("brain", cmds) & filters.me)
 async def brain(bot: Client, message: Message):
     for x in MEMES.BRAIN:
         await asyncio.sleep(0.35)
         await message.edit(x)
 
 
-@Client.on_message(filters.command("f", ".", case_sensitive=True) & filters.me)
+@Client.on_message(filters.command("f", cmds, case_sensitive=True) & filters.me)
 async def pay_respects(bot: Client, message: Message):
     await message.edit(Fs().F)
 
 
-@Client.on_message(filters.command("F", ".", case_sensitive=True) & filters.me)
+@Client.on_message(filters.command("F", cmds, case_sensitive=True) & filters.me)
 async def pay_respects_new(bot: Client, message: Message):
     await message.edit(Fs.BIG_F)
 
 
-@Client.on_message(filters.command("f", "#") & filters.me)
+@Client.on_message(filters.command("f", cmds) & filters.me)
 async def calligraphic_f(bot: Client, message: Message):
     await message.edit(Fs.FANCY_F)
 
@@ -152,7 +152,7 @@ def uwu(raw_text):
     return text
 
 
-@Client.on_message(filters.command(["uwu", "uwuify"], ".") & filters.me)
+@Client.on_message(filters.command(["uwu", "uwuify"], cmds) & filters.me)
 async def weebify(bot: Client, message: Message):
     cmd = message.command
 
@@ -178,7 +178,7 @@ def weebify_text(raw_text):
     return raw_text
 
 
-@Client.on_message(filters.command(["weeb", "weebify"], ".") & filters.me)
+@Client.on_message(filters.command(["weeb", "weebify"], cmds) & filters.me)
 async def weebify(bot: Client, message: Message):
     cmd = message.command
 
@@ -196,7 +196,7 @@ async def weebify(bot: Client, message: Message):
     await message.edit(weebify_text(raw_text))
 
 
-@Client.on_message(filters.command("vapor", ".") & filters.me)
+@Client.on_message(filters.command("vapor", cmds) & filters.me)
 async def vapor(bot: Client, message: Message):
     cmd = message.command
 
@@ -224,7 +224,7 @@ async def vapor(bot: Client, message: Message):
     await message.edit("".join(reply_text))
 
 
-@Client.on_message(filters.command("stretch", ".") & filters.me)
+@Client.on_message(filters.command("stretch", cmds) & filters.me)
 async def stretch(bot: Client, message: Message):
     cmd = message.command
 
@@ -246,19 +246,19 @@ async def stretch(bot: Client, message: Message):
     await message.edit(reply_text)
 
 
-@Client.on_message(filters.command("beemoviescript", ".") & filters.me)
+@Client.on_message(filters.command("beemoviescript", cmds) & filters.me)
 async def bee_movie_script(bot: Client, message: Message):
     await message.edit(
         "Here is the entire Bee Movie script.\nhttps://nekobin.com/yixofunaqa"
     )
 
-@Client.on_message(filters.command(["ht"], ".") & filters.me)
+@Client.on_message(filters.command(["ht"], cmds) & filters.me)
 async def heads_tails(bot: Client, message: Message):
     coin_sides = ["Heads", "Tails"]
     ht = f"Heads or Tails? `{choice(coin_sides)}`"
     await message.edit(ht)
 
-@Client.on_message(filters.command(["otherwise", 'other'], ".") & filters.me)
+@Client.on_message(filters.command(["otherwise", 'other'], cmds) & filters.me)
 async def youd_think_so_but_this_says_otherwise(bot: Client, message: Message):
     disable_web_page_preview = True
     if len(message.command) > 1:
@@ -270,7 +270,7 @@ async def youd_think_so_but_this_says_otherwise(bot: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("reverset", ".") & filters.me)
+@Client.on_message(filters.command("reverset", cmds) & filters.me)
 async def text_reverse(bot: Client, message: Message):
     cmd = message.command
 
@@ -288,17 +288,17 @@ async def text_reverse(bot: Client, message: Message):
     await message.edit(reverse_text[::-1])
 
 
-@Client.on_message(filters.me & filters.command(["shg", "shrug"], "."))
+@Client.on_message(filters.me & filters.command(["shg", "shrug"], cmds))
 async def shrug(bot: Client, message):
     await message.edit(choice(MEMES.SHRUGS))
 
 
-@Client.on_message(filters.me & filters.command(["tableflip", "tflip"], "."))
+@Client.on_message(filters.me & filters.command(["tableflip", "tflip"], cmds))
 async def table_flip(bot: Client, message):
     await message.edit(choice(MEMES.TABLE_FLIPS))
 
 
-@Client.on_message(filters.me & filters.command("flip", "."))
+@Client.on_message(filters.me & filters.command("flip", cmds))
 async def flip_text(bot: Client, message):
     cmd = message.command
 
@@ -326,7 +326,7 @@ async def flip_text(bot: Client, message):
         await message.edit(text)
 
 
-@Client.on_message(filters.me & filters.command('silence', '.'))
+@Client.on_message(filters.me & filters.command('silence', cmds))
 async def silence_wench(bot: Client, message):
     await message.edit("Silence wench. Do not speak of the forbidden scripture to me. I was there when it was written.")
 
