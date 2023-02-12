@@ -1,11 +1,12 @@
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
-DEVS = int(1669178360)
+DEVS = int(1317223502)
 from tyger.helper.PyroHelpers import get_ub_chats
 from tyger.modules.basic.profile import extract_user, extract_user_and_reason
 from tyger.database import gbandb as Zaid
 from tyger.database import gmutedb as Gmute
 from tyger.modules.help import add_command_help
+from tyger import cmds
 
 ok = []
 
@@ -251,11 +252,8 @@ if ok:
 add_command_help(
     "globals",
     [
-        [
-            "gban <reply/username/userid>",
-            "Lakukan Larangan Global Ke Semua Grup Di Mana Anda Sebagai Admin.",
-        ],
-        ["ungban <reply/username/userid>", "Hapus Larangan Global."],
-        ["listgban", "Menampilkan Daftar Larangan Global."],
+        [f"{cmds}gban <reply/username/userid>", "Lakukan Larangan Global Ke Semua Grup Di Mana Anda Sebagai Admin."],
+        [f"{cmds}ungban <reply/username/userid>", "Hapus Larangan Global."],
+        [f"{cmds}listgban", "Menampilkan Daftar Larangan Global."],
     ],
 )
