@@ -55,7 +55,7 @@ for x in cf_api_data:
 
 
 @Client.on_message(
-    filters.command(text_api_commands, ".") & filters.me
+    filters.command(text_api_commands, cmds) & filters.me
 )
 async def hentai_api(bot: Client, message: Message):
     cmd = message.command
