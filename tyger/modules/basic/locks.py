@@ -82,7 +82,7 @@ async def tg_lock(
     )
 
 
-@Client.on_message(filters.command(["lock", "unlock"], ".") & filters.me)
+@Client.on_message(filters.command(["lock", "unlock"], cmds) & filters.me)
 async def locks_func(client: Client, message: Message):
     if len(message.command) != 2:
         return await message.edit_text(incorrect_parameters)
@@ -135,7 +135,7 @@ async def locks_func(client: Client, message: Message):
         )
 
 
-@Client.on_message(filters.command("locks", ".") & filters.me)
+@Client.on_message(filters.command("locks", cmds) & filters.me)
 async def locktypes(client: Client, message: Message):
     permissions = await current_chat_permissions(client, message.chat.id)
 
