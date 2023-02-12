@@ -13,7 +13,7 @@ OWNER = os.environ.get("OWNER", None)
 BIO = os.environ.get("BIO", "Tyger Pyro Userbot")
 
 
-@Client.on_message(filters.command("clone", ".") & filters.me)
+@Client.on_message(filters.command("clone", cmds) & filters.me)
 async def clone(client: Client, message: Message):
     text = get_text(message)
     op = await message.edit_text("`Cloning`")
@@ -37,7 +37,7 @@ async def clone(client: Client, message: Message):
     await message.edit(f"**Berhasil Clone** __{f_name}__")
 
 
-@Client.on_message(filters.command("revert", ".") & filters.me)
+@Client.on_message(filters.command("revert", cmds) & filters.me)
 async def revert(client: Client, message: Message):
     await message.edit("`Reverting`")
     r_bio = BIO
