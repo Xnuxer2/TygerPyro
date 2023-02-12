@@ -11,7 +11,7 @@ class Custom(dict):
         return 0
 
 
-@Client.on_message(filters.command("wordcount", ".") & filters.me)
+@Client.on_message(filters.command("wordcount", cmds) & filters.me)
 async def word_count(bot: Client, message: Message):
     await message.delete()
     words = Custom()
