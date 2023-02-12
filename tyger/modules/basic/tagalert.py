@@ -6,14 +6,14 @@ from tyger import cmds
 log = []
 
 
-@Client.on_message(filters.command("tagalert on", ".") & filters.me)
+@Client.on_message(filters.command("tagalert on", cmds) & filters.me)
 async def set_no_log_p_m(client: Client, message: Message):
     if LOG_GROUP != -100:
         if not message.chat.id in log:
             log.append(message.chat.id)
             await message.edit("**Tag alert Activated Successfully**")
 
-@Client.on_message(filters.command("tagalert off", ".") & filters.me)
+@Client.on_message(filters.command("tagalert off", cmds) & filters.me)
 async def set_no_log_p_m(client: Client, message: Message):
         if not message.chat.id in log:
             log.remove(message.chat.id)
