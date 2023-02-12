@@ -6,7 +6,7 @@ from tyger.modules.help import add_command_help
 from tyger import cmds
 
 @Client.on_message(
-    filters.command(["screenshot", "ss"], ".") & filters.private & filters.me
+    filters.command(["screenshot", "ss"], cmds) & filters.private & filters.me
 )
 async def screenshot(bot: Client, message: Message):
     await asyncio.gather(
