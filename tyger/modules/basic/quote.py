@@ -8,7 +8,7 @@ from tyger.helper.utility import get_arg
 from tyger.modules.help import add_command_help
 from tyger import cmds
 
-@Client.on_message(filters.me & filters.command(["q", "quotly"], "."))
+@Client.on_message(filters.me & filters.command(["q", "quotly"], cmds))
 async def quotly(client: Client, message: Message):
     args = get_arg(message)
     if not message.reply_to_message and not args:
