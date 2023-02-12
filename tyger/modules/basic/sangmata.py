@@ -7,7 +7,7 @@ from tyger.modules.help import add_command_help
 from tyger.modules.basic.profile import extract_user
 from tyger import cmds
 
-@Client.on_message(filters.command(["sg", "sa", "sangmata"], ".") & filters.me)
+@Client.on_message(filters.command(["sg", "sa", "sangmata"], cmds) & filters.me)
 async def sg(client: Client, message: Message):
     args = await extract_user(message)
     lol = await message.edit_text("`Processing...`")
