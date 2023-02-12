@@ -7,7 +7,7 @@ from .pmguard import get_arg, denied_users
 import tyger.database.pmpermitdb as Zaid
 from tyger import cmds
 
-@Client.on_message(filters.command("pmguard", ["."]) & filters.me)
+@Client.on_message(filters.command("pmguard", [cmds]) & filters.me)
 async def pmguard(client, message):
     arg = get_arg(message)
     if not arg:
@@ -19,7 +19,7 @@ async def pmguard(client, message):
     if arg == "on":
         await Zaid.set_pm(True)
         await message.edit("**PM Guard diaktifkan**")
-@Client.on_message(filters.command("setpmmsg", ["."]) & filters.me)
+@Client.on_message(filters.command("setpmmsg", [cmds]) & filters.me)
 async def setpmmsg(client, message):
     arg = get_arg(message)
     if not arg:
