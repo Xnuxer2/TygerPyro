@@ -7,7 +7,7 @@ from tyger.modules.help import add_command_help
 from pyrogram import enums
 from tyger import cmds
 
-@Client.on_message(filters.command(["weather", "w"], ".") & filters.me)
+@Client.on_message(filters.command(["weather", "w"], cmds) & filters.me)
 async def get_weather(bot: Client, message: Message):
     if len(message.command) == 1:
         await message.edit("Usage: `.weather Maldives`")
