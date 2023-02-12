@@ -8,7 +8,7 @@ from tyger.modules.help import add_command_help
 from tyger import cmds
 
 @Client.on_message(
-    filters.command(["l", "lyrics"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["l", "lyrics"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def send_lyrics(bot: Client, message: Message):
     try:
