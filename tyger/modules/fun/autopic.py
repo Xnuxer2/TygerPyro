@@ -47,7 +47,7 @@ async def _autopic(_, delay):
 
 
 @Client.on_message(
-    filters.command(["autopic"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["autopic"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def autopic_zaid(_, m):
     global __XOR
