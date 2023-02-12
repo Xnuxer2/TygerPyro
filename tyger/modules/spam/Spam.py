@@ -42,7 +42,7 @@ async def extract_args(message, markdown=True):
     return text
 
 @Client.on_message(
-    filters.command(["dspam", "delayspam"], "{cmds}") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["dspam", "delayspam"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 
 async def delayspam(client: Client, message: Message):
@@ -79,7 +79,7 @@ async def delayspam(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(commands, "{cmds}") & (filters.me | filters.user(SUDO_USER))
+    filters.command(commands, cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def sspam(client: Client, message: Message):
     if message.chat.id in BLACKLIST_CHAT:
@@ -107,7 +107,7 @@ async def sspam(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["sspam", "stkspam", "spamstk", "stickerspam"], "{cmds}") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["sspam", "stkspam", "spamstk", "stickerspam"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def spam_stick(client: Client, message: Message):
     if message.chat.id in BLACKLIST_CHAT:
