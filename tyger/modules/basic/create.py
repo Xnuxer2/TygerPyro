@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from tyger.modules.help import add_command_help
 from tyger import cmds
 
-@Client.on_message(filters.command("create", ".") & filters.me)
+@Client.on_message(filters.command("create", cmds) & filters.me)
 async def create(client: Client, message: Message):
     if len(message.command) < 3:
         return await message.edit_text(
