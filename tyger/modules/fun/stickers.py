@@ -3,9 +3,9 @@ import random
 
 from pyrogram import filters, Client
 from pyrogram.types import Message
-
 from tyger.helper.PyroHelpers import ReplyCheck
 from tyger.modules.help import add_command_help
+from tyger import cmds
 
 sticker_data = {
     "mock": {
@@ -107,20 +107,11 @@ async def sticker_super_func(bot: Client, message: Message):
 add_command_help(
     "stickers",
     [
-        [
-            ".mock",
-            "Sends a Spongebob mocking meme of what you sent with command or text of what you replied to.\n"
+        [f"{cmds}mock", "Sends a Spongebob mocking meme of what you sent with command or text of what you replied to.\n"
             '**Usage**:\n```.mock you smell like shit``` will give you the meme that says "You smell like shit"\n'
-            "Reply to a text message with .mock and it will grab the text of that message and generate the meme.",
-        ],
-        [
-            ".animegirl `or` .ag",
-            "Sends a random anime girl sticker. Rules apply as above.",
-        ],
-        [".animeboy `or` .ab", "Sends a random boy sticker. Rules apply as above."],
-        [
-            ".ggl",
-            "Sends google search buttons with the query you give it. Rules apply as above.",
-        ],
+            "Reply to a text message with .mock and it will grab the text of that message and generate the meme."],
+        [f"{cmds}animegirl `or` {cmds}ag", "Sends a random anime girl sticker. Rules apply as above."],
+        [f"{cmds}animeboy `or` {cmds}ab", "Sends a random boy sticker. Rules apply as above."],
+        [f"{cmds}ggl", "Sends google search buttons with the query you give it. Rules apply as above."],
     ],
 )
