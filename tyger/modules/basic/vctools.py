@@ -39,7 +39,7 @@ async def get_group_call(
 
 
 @Client.on_message(
-    filters.command(["startvc"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["startvc"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def opengc(client: Client, message: Message):
     flags = " ".join(message.command[1:])
@@ -73,7 +73,7 @@ async def opengc(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["stopvc"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["stopvc"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def end_vc_(client: Client, message: Message):
     chat_id = message.chat.id
