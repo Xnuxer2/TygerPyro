@@ -40,6 +40,7 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
 from tyger import cmds, BOTLOG_CHATID, LOGGER
 from tyger.helper.basic import edit_or_reply
 from tyger.modules.help import add_command_help
+from tyger import cmds
 HAPP = None
 
 
