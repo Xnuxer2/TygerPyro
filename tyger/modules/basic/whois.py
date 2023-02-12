@@ -8,7 +8,7 @@ from tyger.modules.basic.profile import extract_user
 from tyger.modules.help import add_command_help
 from tyger import cmds
 
-@Client.on_message(filters.command(["whois", "info"], ".") & filters.me)
+@Client.on_message(filters.command(["whois", "info"], cmds) & filters.me)
 async def who_is(client: Client, message: Message):
     user_id = await extract_user(message)
     ex = await message.edit_text("`Processing . . .`")
@@ -71,7 +71,7 @@ async def who_is(client: Client, message: Message):
         return await ex.edit(f"**INFO:** `{e}`")
 
 
-@Client.on_message(filters.command(["chatinfo", "cinfo", "ginfo"], ".") & filters.me)
+@Client.on_message(filters.command(["chatinfo", "cinfo", "ginfo"], cmds) & filters.me)
 async def chatinfo_handler(client: Client, message: Message):
     ex = await message.edit_text("`Processing...`")
     try:
