@@ -16,14 +16,15 @@ from tyger.database.rraid import *
 from tyger import SUDO_USER
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
-DEVS = int(1669178360)
+DEVS = int(1317223502)
 from tyger.helper.PyroHelpers import get_ub_chats
 from tyger.modules.basic.profile import extract_user, extract_user_and_reason
+from tyger import cmds
 SUDO_USERS = SUDO_USER
 RAIDS = []
 
 @Client.on_message(
-    filters.command(["pornspam"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["pornspam"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def pornspam(xspam: Client, e: Message): 
     counts = e.command[0]
@@ -43,7 +44,7 @@ async def pornspam(xspam: Client, e: Message):
               await asyncio.sleep(0.4)
 
 @Client.on_message(
-    filters.command(["hang"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["hang"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def pornspam(xspam: Client, e: Message): 
     counts = e.command[1]
@@ -59,7 +60,7 @@ async def pornspam(xspam: Client, e: Message):
 
 
 @Client.on_message(
-    filters.command(["raid"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["raid"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def raid(xspam: Client, e: Message):  
       Zaid = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
@@ -116,20 +117,20 @@ async def raid(xspam: Client, e: Message):
                     await xspam.send_message(e.chat.id, msg)
                     await asyncio.sleep(0.10)
       else:
-          await e.reply_text("Usage: .raid count username")
+          await e.reply_text("Usage: {cmds}raid count username")
 
 
 add_command_help(
     "raid",
     [
-        [".raid", "<user id and count>`."],
-        [".pornspam", "<count>`."],
-        [".hang", "Make telegram hang."],
+        [f"{cmds}raid", "<user id and count>`."],
+        [f"{cmds}pornspam", "<count>`."],
+        [f"{cmds}hang", "Make telegram hang."],
     ],
 )
 
 @Client.on_message(
-    filters.command(["dreplyraid"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["dreplyraid"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
@@ -162,7 +163,7 @@ async def gmute_user(client: Client, message: Message):
 add_command_help(
     "replyraid",
     [
-        [".replyraid", "Reply To User\n To Raid on Someone."],
-        [".dreplyraid", "To Disable ReplyRaid."],
+        [f"{cmds}replyraid", "Reply To User\n To Raid on Someone."],
+        [f"{cmds}dreplyraid", "To Disable ReplyRaid."],
     ],
 )
