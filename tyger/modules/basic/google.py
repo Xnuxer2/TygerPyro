@@ -30,7 +30,7 @@ def googlesearch(query):
     return returnquery
 
 
-@Client.on_message(filters.command(["gs", "google"], ".") & filters.me)
+@Client.on_message(filters.command(["gs", "google"], cmds) & filters.me)
 async def gs(client: Client, message: Message):
     Man = await edit_or_reply(message, "`Processing...`")
     msg_txt = message.text
