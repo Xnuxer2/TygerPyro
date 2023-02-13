@@ -99,7 +99,7 @@ async def ping_function(message: Message, answers):
         f"├✠╼━━━━━━━━━━━━━━━\n"
         f"│★ Pɪɴɢᴇʀ    : </b> <code>{duration}ms</code>\n"
         f"│★ Uᴘᴛɪᴍᴇ    : </b> <code>{uptime}</code>"
-        f"╰✠╼━━━━━━━━━━━━━━━━\n"
+        f"╰✠╼━━━━━━━━━━━━━━━\n"
         f"©️ Tyger Projects"
     )
     answers.append(
