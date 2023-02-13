@@ -7,6 +7,7 @@ from pyrogram.types import Message
 
 from tyger.helper.PyroHelpers import GetChatID, ReplyCheck
 from tyger.modules.help import add_command_help
+from tyger import cmds
 
 
 @Client.on_message(filters.command(["pat", "pats"], cmds) & filters.me)
