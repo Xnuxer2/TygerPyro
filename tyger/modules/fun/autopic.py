@@ -65,6 +65,6 @@ async def autopic_zaid(_, m):
 
 
 add_command_help(
-    "Autopic",
+    "autopic",
     [[f"{cmds}autopic", "Ubah DP Anda setiap 5 menit. \nJalankan autopic lagi untuk menghentikannya."]],
 )
