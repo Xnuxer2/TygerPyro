@@ -191,7 +191,7 @@ async def view_pfp(client: Client, message: Message):
     else:
         user = await client.get_me()
     if not user.photo:
-        await message.reply_text("("Foto profil tidak ditemukan!")
+        await message.reply_text("Foto profil tidak ditemukan!")
         return
     await client.download_media(user.photo.big_file_id, file_name=profile_photo)
     await client.send_photo(
