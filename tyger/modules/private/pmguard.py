@@ -6,6 +6,7 @@ from pyrogram.methods import messages
 from tyger.database.pmpermitdb import get_approved_users, pm_guard
 import tyger.database.pmpermitdb as Zaid
 from config import LOG_GROUP, PM_LOGGER
+from tyger import cmds
 FLOOD_CTRL = 0
 ALLOWED = []
 USERS_AND_WARNS = {}
