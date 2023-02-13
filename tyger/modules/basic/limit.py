@@ -12,7 +12,7 @@ import asyncio
 from pyrogram import Client, filters, raw
 from pyrogram.types import Message
 from tyger.helper.basic import edit_or_reply
-from tyger.modules.basic import add_command_help
+from tyger.modules.help import add_command_help
 from tyger import cmds
 
 @Client.on_message(filters.command("limit", cmds) & filters.me)
