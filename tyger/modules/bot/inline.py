@@ -98,7 +98,7 @@ async def ping_function(message: Message, answers):
         f"│ 💫 𝗧𝘆𝗴𝗲𝗿𝗣𝘆𝗿𝗼-𝗕𝗼𝘁 💫\n"
         f"├✠╼━━━━━━━━━━━━━━━\n"
         f"│★ Pɪɴɢᴇʀ    : </b> <code>{duration}ms</code>\n"
-        f"│★ Uᴘᴛɪᴍᴇ    : </b> <code>{uptime}</code>"
+        f"│★ Uᴘᴛɪᴍᴇ    : </b> <code>{uptime}</code>\n"
         f"╰✠╼━━━━━━━━━━━━━━━\n"
         f"©️ Tyger Projects"
     )
