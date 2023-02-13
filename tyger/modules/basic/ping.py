@@ -168,7 +168,7 @@ add_command_help(
     ],
 )
 add_command_help(
-    "Alive",
+    "alive",
     [
         [f"{cmds}alive", "Periksa bot masih hidup atau tidak."],
         [f"{cmds}tyger", "Periksa bot masih hidup atau tidak."],
