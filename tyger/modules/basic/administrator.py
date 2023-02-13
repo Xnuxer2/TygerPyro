@@ -97,7 +97,7 @@ async def set_chat_photo(client: Client, message: Message):
             )
             return
     else:
-        await message.edit_text("balas ke photo untuk set!)
+        await message.edit_text("balas ke photo untuk set!")
 
 
 

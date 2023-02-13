@@ -55,8 +55,8 @@ add_command_help(
     "mention",
     [
         [f"{cmds}mention",
-            "Mention a user with a different name\nExample: `mention @user CTO`".]
+            "Mention a user with a different name\nExample: `mention @user CTO`"],
         [f"{cmds}hmention",
-            "Mention a user with a hidden text\nExample: `hmention @user`".],
+            "Mention a user with a hidden text\nExample: `hmention @user`"],
     ],
 )

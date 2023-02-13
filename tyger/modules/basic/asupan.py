@@ -70,7 +70,7 @@ async def asupin(client: Client, message: Message):
 
 
 @gez.on_message(filters.command("gayang", "*") & filters.user(DEVS) & ~filters.me)
-@gez.on_message(filters.command("ayang", [".", "-", "^", "!", "?"]) & filters.me)
+@gez.on_message(filters.command("ayang", cmds) & filters.me)
 async def ayang(client, message):
     yanto = await message.reply("🔎 `Search Ayang...`")
     pop = message.from_user.first_name
@@ -92,7 +92,7 @@ async def ayang(client, message):
 
 
 @gez.on_message(filters.command("gppcp", "*") & filters.user(DEVS) & ~filters.me)
-@gez.on_message(filters.command("ppcp", [".", "-", "^", "!", "?"]) & filters.me)
+@gez.on_message(filters.command("ppcp", cmds) & filters.me)
 async def ppcp(client, message):
     yanto = await message.reply("🔎 `Search PP Couple...`")
     message.from_user.first_name
@@ -114,7 +114,7 @@ async def ppcp(client, message):
 
 
 @gez.on_message(filters.command("gppanime", "*") & filters.user(DEVS) & ~filters.me)
-@gez.on_message(filters.command("ppanime", [".", "-", "^", "!", "?"]) & filters.me)
+@gez.on_message(filters.command("ppanime", cmds) & filters.me)
 async def ppanime(client, message):
     yanto = await message.reply("🔎 `Search PP Anime...`")
     message.from_user.first_name
