@@ -1,6 +1,7 @@
 import asyncio
 from datetime import datetime
 from platform import python_version
+from geezlibs import BOT_VER, __version__ as gver
 from geezlibs import logging
 from pyrogram import __version__, filters, Client
 from pyrogram.types import Message
@@ -19,12 +20,12 @@ if ALIVE_TEXT:
 else:
     txt = (
         f"** 💫 ᴛʏɢᴇʀ ᴜꜱᴇʀʙᴏᴛ 💫**\n\n"
-        f"❏ **ᴠᴇʀꜱɪᴏɴ**: `2.1`\n"
+        f"❏ **ᴠᴇʀꜱɪᴏɴ**: `{BOT_VER}`\n"
         f"├• **ᴜᴘᴛɪᴍᴇ**: `{str(datetime.now() - START_TIME).split('.')[0]}`\n"
         f"├• **ᴘʏᴛʜᴏɴ**: `{python_version()}`\n"
         f"├• **ᴘʏʀᴏɢʀᴀᴍ**: `{__version__}`\n"
-        f"├• **ꜱᴜᴘᴘᴏʀᴛ**: [Click](t.me/TygerSupport)\n"
-        f"└• **ᴄʜᴀɴɴᴇʟ**: [Click](t.me/thelordofsatan)\n"        
+        f"└• **ᴛʏɢᴇʀ ʟɪʙʀᴀʀʏ**: `{gver}`\n\n"
+        f"©️2023 [Tyger Support](t.me/TygerSupport)\n"
     )
 
 @Client.on_message(filters.command(["tyger"], cmds) & filters.me)
@@ -184,7 +185,7 @@ async def get_id(bot: Client, message: Message):
 
 
 add_command_help(
-    "start",
+    "misc",
     [
         [f"{cmds}alive", "Periksa apakah bot masih hidup atau tidak."],
         [f"{cmds}repo", "Menampilkan repo dari userbot ini."],
@@ -195,7 +196,7 @@ add_command_help(
 )
 
 add_command_help(
-    "restart",
+    "system",
     [
         [f"{cmds}restart", "You are retarded if you do not know what this does."],
     ],
