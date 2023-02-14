@@ -181,9 +181,9 @@ add_command_help(
     "tag",
     [
         [f"{cmds}admins","Dapatkan daftar admin obrolan."],
-        [f"{cmds}kickdel or .zombies", "Untuk Menendang Akun yang dihapus."],
+        [f"{cmds}kickdel or {cmds}zombies", "Untuk Menendang Akun yang dihapus."],
         [
-            f"{cmds}everyone `or` .mentionall",
+            f"{cmds}everyone `or` {cmds}mentionall",
             "untuk menyebutkan Semua orang ",
         ],
         [
