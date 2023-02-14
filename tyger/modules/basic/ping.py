@@ -153,24 +153,24 @@ async def ppingme(client: Client, message: Message):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await xx.edit(
-        f"├✠╼━━━━━━━━━━━━━━━\n"
-        f"│** ➽  Sɪɢɴᴀʟ   :** `%sms` \n"
-        f"│** ➽  Uᴘᴛɪᴍᴇ   :** `{uptime}` \n"
-        f"╰✠╼━━━━━━━━━━━━━━━\n"
+        f"❏ **𝗣𝗢𝗡𝗚**\n"
+        f"├•  - `%sms`\n"
+        f"├•  `{uptime}` \n"
+        f"└•  {client.me.mention}" % (duration)
     )
 
 
 add_command_help(
     "ping",
     [
-        [f"{cmds}ping", "Periksa bot masih hidup atau tidak."],
-        [f"{cmds}pping", "Periksa bot masih hidup atau tidak."],
+        [f"{cmds}ping", "Check bot alive or not."],
+        [f"{cmds}pping", "Check bot alive or not."],
     ],
 )
 add_command_help(
     "alive",
     [
-        [f"{cmds}alive", "Periksa bot masih hidup atau tidak."],
-        [f"{cmds}tyger", "Periksa bot masih hidup atau tidak."],
+        [f"{cmds}alive", "Check bot alive or not."],
+        [f"{cmds}tyger", "Check bot alive or not."],
     ],
 )
