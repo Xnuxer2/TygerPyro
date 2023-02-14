@@ -13,7 +13,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from tyger.helper.basic import edit_or_reply
 from tyger.helper.PyroHelpers import ReplyCheck
-from tyger.modules.basic import add_command_help
+from tyger.modules.help import add_command_help
 from tyger import cmds
 
 @Client.on_message(filters.command("p", cmds) & filters.me)
