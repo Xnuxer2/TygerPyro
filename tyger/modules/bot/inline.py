@@ -17,6 +17,7 @@ from pyrogram.types import (
 from tyger import CMD_HELP, StartTime, app
 from tyger.helper.data import Data
 from tyger.helper.inline import inline_wrapper, paginate_help
+from geezlibs import BOT_VER
 from config import OWNER_ID, BRANCH as branch
 
 async def get_readable_time(seconds: int) -> str:
@@ -55,7 +56,7 @@ async def alive_function(message: Message, answers):
 <b> 💫 Pyrogram Version :</b> <code>{pyrover}</code>
 <b> 💫 Bot Uptime :</b> <code>{uptime}</code>
 
-<b> — Bot version: 2.0</b>
+<b> — Bot version: {BOT_VER}</b>
 """
     answers.append(
         InlineQueryResultArticle(
@@ -99,6 +100,7 @@ async def ping_function(message: Message, answers):
         f"├✠╼━━━━━━━━━━━━━━━\n"
         f"│★ Pɪɴɢᴇʀ    : </b> <code>{duration}ms</code>\n"
         f"│★ Uᴘᴛɪᴍᴇ    : </b> <code>{uptime}</code>\n"
+        f"│★ Bʀᴀɴᴄʜ    : {branch}\n"
         f"╰✠╼━━━━━━━━━━━━━━━\n"
         f"©️ Tyger Projects"
     )
