@@ -153,10 +153,12 @@ async def ppingme(client: Client, message: Message):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await xx.edit(
-        f"❏ **𝗣𝗢𝗡𝗚**\n"
-        f"├•  - `%sms`\n"
-        f"├•  `{uptime}` \n"
-        f"└•  {client.me.mention}" % (duration)
+        f"**𝗧𝘆𝗴𝗲𝗿𝗣𝘆𝗿𝗼 💫**\n"
+        f"** ➠  Sɪɢɴᴀʟ   :** "
+        f"`%sms` \n"
+        f"** ➠  Uᴘᴛɪᴍᴇ  :** "
+        f"`{uptime}` \n"
+        f"** ➠  Oᴡɴᴇʀ   :** {client.me.mention}" % (duration)
     )
 
 
