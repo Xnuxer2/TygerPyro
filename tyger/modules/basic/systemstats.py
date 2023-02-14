@@ -104,7 +104,7 @@ async def psu(client: Client, message: Message):
     await message.reply(help_string)
 
 add_command_help(
-    "System",
+    "system",
     [
         [f"{cmds}spc", "Info system dan CPU Host."],
     ],
