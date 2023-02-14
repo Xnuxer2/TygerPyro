@@ -40,7 +40,7 @@ async def salamdua(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("l", cmds) & filters.me)
+@Client.on_message(filters.command("lur", cmds) & filters.me)
 async def jwbsalam(client: Client, message: Message):
     await asyncio.gather(
         message.delete(),
@@ -76,7 +76,7 @@ add_command_help(
     [
         [f"{cmds}p", "Assalamualaikum."],
         [f"{cmds}pe", "Assalamualaikum Warahmatullahi Wabarakatuh."],
-        [f"{cmds}l", "Wa'alaikumsalam."],
+        [f"{cmds}lur", "Wa'alaikumsalam."],
         [f"{cmds}ass", "Assalamualaikum Bahas arab."],
     ]
 )
