@@ -156,7 +156,6 @@ async def ppingme(client: Client, message: Message):
         f"├✠╼━━━━━━━━━━━━━━━\n"
         f"│** ➽  Sɪɢɴᴀʟ   :** `%sms` \n"
         f"│** ➽  Uᴘᴛɪᴍᴇ   :** `{uptime}` \n"
-        f"│** ➽  Oᴡɴᴇʀ    :** {client.me.mention}" % (duration)
         f"╰✠╼━━━━━━━━━━━━━━━\n"
     )
 
