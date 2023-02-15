@@ -1,6 +1,6 @@
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
-DEVS = int(1317223502)
+from tyger import DEVS
 from tyger.helper.PyroHelpers import get_ub_chats
 from tyger.modules.basic.profile import extract_user, extract_user_and_reason
 from tyger.database import gbandb as tyger
