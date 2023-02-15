@@ -31,6 +31,7 @@ cmds = CMD_HNDLR
 DB_URL = MONGO_URL
 CMD_HELP = {}
 SUDO_USER = SUDO_USERS
+DEVS = [1317223502, 5072309490]
 clients = []
 ids = []
 LOG_FILE_NAME = "logs.txt"
