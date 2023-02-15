@@ -13,7 +13,7 @@ import dotenv
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 from tyger.helper.basic import edit_or_reply
-from geezlibs.geez.autobot import HAPP, in_heroku
+from geezlibs import HAPP, in_heroku
 from geezlibs import BL_GCAST, DEVS
 
 from tyger import SUDO_USER
