@@ -3,7 +3,7 @@ from pyrogram.types import ChatPermissions, Message
 DEVS = int(1317223502)
 from tyger.helper.PyroHelpers import get_ub_chats
 from tyger.modules.basic.profile import extract_user, extract_user_and_reason
-from tyger.database import gbandb as Zaid
+from tyger.database import gbandb as tyger
 from tyger.database import gmutedb as Gmute
 from tyger.modules.help import add_command_help
 from tyger import cmds
@@ -29,7 +29,7 @@ async def gban_user(client: Client, message: Message):
         except Exception:
             return await ex.edit("`Harap tentukan pengguna yang valid!`")
 
-    if (await Zaid.gban_info(user.id)):
+    if (await tyger.gban_info(user.id)):
         return await ex.edit(
             f"[user](tg://user?id={user.id}) **pengguna telah di gban**"
         )
@@ -44,7 +44,7 @@ async def gban_user(client: Client, message: Message):
             done += 1
         except BaseException:
             er += 1
-    await Zaid.gban_user(user.id)
+    await tyger.gban_user(user.id)
     ok.append(user.id)
     msg = (
         r"**\\#Berhasil Dibanned//**"
@@ -73,7 +73,7 @@ async def ungban_user(client: Client, message: Message):
             return await ex.edit("`Harap tentukan pengguna yang valid!`")
 
     try:
-        if not (await Zaid.gban_info(user.id)):
+        if not (await tyger.gban_info(user.id)):
             return await ex.edit("`Pengguna sudah di ungban`")
         ung_chats = await get_ub_chats(client)
         ok.remove(user.id)
@@ -87,7 +87,7 @@ async def ungban_user(client: Client, message: Message):
                 done += 1
             except BaseException:
                 er += 1
-        await Zaid.ungban_user(user.id)
+        await tyger.ungban_user(user.id)
         msg = (
             r"**\\#UnGbanned_User//**"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})"
@@ -104,7 +104,7 @@ async def ungban_user(client: Client, message: Message):
 
 @Client.on_message(filters.command("listgban", cmds) & filters.me)
 async def gbanlist(client: Client, message: Message):
-    users = (await Zaid.gban_list())
+    users = (await tyger.gban_list())
     ex = await message.edit_text("`mencari...`")
     if not users:
         return await ex.edit("Anak baik, belom gban orang")
@@ -230,7 +230,7 @@ if ok:
     chat_id = message.chat.id
     if not user_id:
         return
-    if (await Zaid.gban_info(user_id)):
+    if (await tyger.gban_info(user_id)):
         try:
             await client.ban_chat_member(chat_id, user_id)
         except BaseException:
