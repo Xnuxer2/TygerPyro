@@ -12,12 +12,12 @@ import asyncio
 import dotenv
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message
-from geezlibs.geez.helper import edit_or_reply
+from tyger.helper.basic import edit_or_reply
 from geezlibs.geez.autobot import HAPP, in_heroku
 from geezlibs import BL_GCAST, DEVS
 
 from tyger import SUDO_USER
-from tygert import cmds
+from tyger import cmds
 from tyger.modules.help import add_command_help
 from tyger.modules.updater.update import restart
 from config import HEROKU_APP_NAME, HEROKU_API_KEY, BLACKLIST_GCAST
