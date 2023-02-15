@@ -118,7 +118,6 @@ async def pingme(client: Client, message: Message):
         f" `%sms` \n "
         f"**🤖 Aᴋᴛɪꜰ »** "
         f" `{uptime}` \n " % (duration)
-        f"**⊶⊶⊶⊶⊶⊶⊶⊶**\n"
     )
     
 @Client.on_message(
@@ -168,7 +167,6 @@ async def ppingme(client: Client, message: Message):
         f"** ⇨  Aᴋᴛɪꜰ  :** "
         f"`{uptime}` \n"
         f"** ⇨  Oᴡɴᴇʀ  :** {client.me.mention}" % (duration)
-        f"**╼┅━━━━━━━╍━━━━━━━┅╾**\n"
     )
 
 
