@@ -94,7 +94,7 @@ async def cpingme(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command("pink", cmds) & (filters.me)
+    filters.command("cping", cmds) & (filters.me)
 )
 async def pingme(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
@@ -111,7 +111,13 @@ async def pingme(client: Client, message: Message):
     await xx.edit("**Pinging...**")
     await xx.edit("**Pinging....**")
     await asyncio.sleep(1)
-    await xx.edit(f"**Tyger - Pyro!!🎈**\n**Pinger** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
+    await xx.edit(
+        f"**𝗧𝘆𝗴𝗲𝗿 𝐔𝐬𝐞𝐫𝐛𝐨𝐭** 🏓\n"
+        f"├•**Pᴏɴɢ »** "
+        f" `%sms` \n "
+        f"├•**Aᴋᴛɪꜰ »** "
+        f" `{uptime}` \n " % (duration)
+    )
     
 @Client.on_message(
     filters.command("ping", cmds) & (filters.me)
@@ -135,30 +141,31 @@ async def module_ping(client: Client, message: Message):
             print(f"{e}")
 
 @Client.on_message(
-    filters.command(["pping"], cmds) & (filters.me | filters.user(SUDO_USER))
+    filters.command(["tping"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def ppingme(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    xx = await message.reply_text("**0% ▒▒▒▒▒▒▒▒▒▒**")
+    xx = await message.reply_text("**0% □□□□□**")
     try:
        await message.delete()
     except:
        pass
-    await xx.edit("**20% ██▒▒▒▒▒▒▒▒**")
-    await xx.edit("**40% ████▒▒▒▒▒▒**")
-    await xx.edit("**60% ██████▒▒▒▒**")
-    await xx.edit("**80% ████████▒▒**")
-    await xx.edit("**100% ██████████**")
+    await xx.edit("**20% ■□□□□**")
+    await xx.edit("**40% ■■□□□**")
+    await xx.edit("**60% ■■■□□**")
+    await xx.edit("**80% ■■■■□**")
+    await xx.edit("**100% ■■■■■**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await xx.edit(
         f"**𝗧𝘆𝗴𝗲𝗿𝗣𝘆𝗿𝗼 💫**\n"
-        f"** ➠  Sɪɢɴᴀʟ   :** "
+        f"**╼┅━━━━━━━━━╍━━━━━━━━━┅╾**\n"
+        f"** ⇨  Sɪɢɴᴀʟ :** "
         f"`%sms` \n"
-        f"** ➠  Uᴘᴛɪᴍᴇ  :** "
+        f"** ⇨  Aᴋᴛɪꜰ  :** "
         f"`{uptime}` \n"
-        f"** ➠  Oᴡɴᴇʀ   :** {client.me.mention}" % (duration)
+        f"** ⇨  Oᴡɴᴇʀ  :** {client.me.mention}" % (duration)
     )
 
 
@@ -166,7 +173,7 @@ add_command_help(
     "ping",
     [
         [f"{cmds}ping", "Check bot alive or not."],
-        [f"{cmds}pping", "Check bot alive or not."],
+        [f"{cmds}tping", "Check bot alive or not."],
     ],
 )
 add_command_help(
