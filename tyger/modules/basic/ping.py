@@ -112,11 +112,13 @@ async def pingme(client: Client, message: Message):
     await xx.edit("**Pinging....**")
     await asyncio.sleep(1)
     await xx.edit(
-        f"**𝗧𝘆𝗴𝗲𝗿 𝐔𝐬𝐞𝐫𝐛𝐨𝐭** 🏓\n"
-        f"├•**Pᴏɴɢ »** "
+        f"**𝐓𝐲𝐠𝐞𝐫 𝐔𝐬𝐞𝐫𝐛𝐨𝐭** 🏓\n"
+        f"**⊶⊶⊶⊶⊶⊶⊶⊶⊶**\n"
+        f"├•**Pɪɴɢᴇʀ »** "
         f" `%sms` \n "
         f"├•**Aᴋᴛɪꜰ »** "
         f" `{uptime}` \n " % (duration)
+        f"**⊶⊶⊶⊶⊶⊶⊶⊶⊶**\n"
     )
     
 @Client.on_message(
@@ -160,7 +162,7 @@ async def ppingme(client: Client, message: Message):
     duration = (end - start).microseconds / 1000
     await xx.edit(
         f"**𝗧𝘆𝗴𝗲𝗿𝗣𝘆𝗿𝗼 💫**\n"
-        f"**╼┅━━━━━━━━━╍━━━━━━━━━┅╾**\n"
+        f"**╼┅━━━━━━━╍━━━━━━━┅╾**\n"
         f"** ⇨  Sɪɢɴᴀʟ :** "
         f"`%sms` \n"
         f"** ⇨  Aᴋᴛɪꜰ  :** "
