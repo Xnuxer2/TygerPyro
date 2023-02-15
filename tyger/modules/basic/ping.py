@@ -112,7 +112,7 @@ async def pingme(client: Client, message: Message):
     await xx.edit("**Pinging....**")
     await asyncio.sleep(1)
     await xx.edit(
-        f"**𝐓𝐲𝐠𝐞𝐫 𝐔𝐬𝐞𝐫𝐛𝐨𝐭** 🏓\n"
+        f"**𝐓𝐲𝐠𝐞𝐫 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 🏓**\n"
         f"**⊶⊶⊶⊶⊶⊶⊶⊶**\n"
         f"🤖**Pɪɴɢᴇʀ »** "
         f" `%sms` \n "
