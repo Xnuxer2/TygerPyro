@@ -1,6 +1,5 @@
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
-DEVS = int(1317223502)
 from tyger.helper.PyroHelpers import get_ub_chats
 from tyger.modules.basic.profile import extract_user, extract_user_and_reason
 from tyger import SUDO_USER
@@ -12,7 +11,7 @@ ok = []
 
 
 @Client.on_message(filters.command("sudolist", cmds) & filters.me)
-async def gbanlist(client: Client, message: Message):
+async def sudolist(client: Client, message: Message):
     users = (SUDO_USER)
     ex = await message.edit_text("`Processing...`")
     if not users:
@@ -25,8 +24,8 @@ async def gbanlist(client: Client, message: Message):
     return await ex.edit(gban_list)
 
 
-@Client.on_message(filters.command("addsudo", cmds) & filters.user(OWNER_ID))
-async def gmute_user(client: Client, message: Message):
+@Client.on_message(filters.command("addsudo", cmds) & filters.me)
+async def addsudo(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
     ex = await message.reply_text("`Processing...`")
@@ -43,7 +42,7 @@ async def gmute_user(client: Client, message: Message):
         await ex.edit(f"`Please specify a valid user!`")
         return
     if user.id == client.me.id:
-        return await ex.edit("**Okay Sure.. 🐽**")
+        return await ex.edit("**Okay Sure.. **")
 
     try:
         if user.id in SUDO_USER:
@@ -57,7 +56,7 @@ async def gmute_user(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("rmsudo", cmds) & filters.user(OWNER_ID))
-async def gmute_user(client: Client, message: Message):
+async def rmsudo(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
     ex = await message.reply_text("`Processing...`")
@@ -74,7 +73,7 @@ async def gmute_user(client: Client, message: Message):
         await ex.edit(f"`Please specify a valid user!`")
         return
     if user.id == client.me.id:
-        return await ex.edit("**Okay Sure.. 🐽**")
+        return await ex.edit("**Okay Sure.. **")
 
     try:
         if user.id in SUDO_USER:
@@ -91,8 +90,10 @@ async def gmute_user(client: Client, message: Message):
 add_command_help(
     "sudos",
     [
-        [f"{cmds}addsudo <reply/username/userid>","Tambahkan pengguna mana pun sebagai Sudo (Gunakan Ini dengan risiko Anda sendiri, mungkin pengguna sudo dapat mengontrol akun Anda)."],
-        [f"{cmds}rmsudo <reply/username/userid>", "Menghapus akses Sudo."],
-        [f"{cmds}sudolist", "Menampilkan Daftar Sudo."],
+        [f"{cmds}addsudo <reply/username/userid>",
+            f"{cmds}Add any user as Sudo (Use This At your own risk maybe sudo users can control ur account).",
+        ],
+        [f"{cmds}rmsudo <reply/username/userid>", "Menghapus sudo."],
+        [f"{cmds}sudolist", "Melihat list sudo."],
     ],
 )
