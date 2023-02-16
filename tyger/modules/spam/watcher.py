@@ -17,12 +17,11 @@ from tyger.database.rraid import *
 from tyger import SUDO_USER
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
-DEVS = int(1317223502)
 from tyger.helper.PyroHelpers import get_ub_chats
 from tyger.modules.basic.profile import extract_user, extract_user_and_reason
 SUDO_USERS = SUDO_USER
 from .replyraid import RAIDS
-
+from tyger import DEVS
 
 
 if RAIDS:
