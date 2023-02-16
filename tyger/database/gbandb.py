@@ -1,6 +1,6 @@
-from tyger.database import cli
+from tyger.database import db_x
 
-gbun = cli["GBAN"]
+gbun = db_x["GBAN"]
 
 
 async def gban_user(user, reason="#GBanned"):
