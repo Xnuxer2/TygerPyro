@@ -1,7 +1,7 @@
-from tyger.database import cli
-import asyncio
+from tyger.database import db_x
 
-collection = cli["Zaid"]["pmpermit"]
+db_y = db_x["PMPERMIT"]
+
 
 PMPERMIT_MESSAGE = (
     "**ʀᴏᴏᴍ ᴄʜᴀᴛ || ᴛʏɢᴇʀ ᴜꜱᴇʀʙᴏᴛ**\n"
