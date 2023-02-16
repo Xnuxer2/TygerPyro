@@ -24,7 +24,7 @@ from aiohttp import ClientSession
 import os
 from os import getenv
 
-OPENAI_API = getenv("OPENAI_API", "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")
+OPENAI_API = getenv("OPENAI_API", "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")
 
 # Aiohttp Async Client
 session = ClientSession()
