@@ -1,10 +1,21 @@
-from pyrogram import filters
-from pyrogram import Client as gez 
+from pyrogram import *
+from pyrogram.types import *
+from pyrogram import Client as gez
+from tyger.helper.cmd import *
 from pyrogram.errors import MessageNotModified
+from tyger.helper.what import *
+from tyger.helper.basic import *
 from tyger import DEVS
+from geezlibs import BL_GCAST
 from tyger.modules.help import add_command_help
+from tyger.utils.tools import *
+from tyger.utils.misc import *
 from tyger import cmds
 from config import OPENAI_API
+import requests
+import os
+import json
+import random
 
 @gez.on_message(filters.command("cask", cmds) & filters.user(DEVS) & ~filters.me)
 @gez.on_message(filters.command("ask", cmds) & filters.me)
