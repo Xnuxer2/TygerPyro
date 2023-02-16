@@ -1,6 +1,6 @@
-from tyger.database import cli
+from tyger.database import db_x
 
-gmuteh = cli["GMUTE"]
+gmuteh = db_x["GMUTE"]
 
 
 async def is_gmuted(sender_id):
