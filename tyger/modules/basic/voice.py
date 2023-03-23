@@ -6,7 +6,7 @@ from gtts import gTTS
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 from geezlibs.geez.utils.tools import run_in_exc
-from geezlibs.geez.helper import edit_or_reply
+from tyger.helper.basic import edit_or_reply
 from tyger import cmds
 from tyger.modules.help import add_command_help
 
